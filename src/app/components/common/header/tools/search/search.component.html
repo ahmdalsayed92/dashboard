@@ -1,0 +1,17 @@
+<form class="topsearch">
+  <span class="material-icons search-icon" (click)="openSearch()">
+    search
+  </span>
+  <input
+    type="text"
+    name="search"
+    placeholder="Search here..."
+    [ngClass]="{ 'search-open': toggleSearch }"
+  />
+  <span
+    class="material-icons close-icon"
+    (click)="searchClose()"
+    [ngClass]="{ 'close-search': toggleSearch }"
+    >close</span
+  >
+</form>
