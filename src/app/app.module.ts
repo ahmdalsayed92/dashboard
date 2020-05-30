@@ -30,6 +30,8 @@ import { SidenavComponent } from './components/common/sidenav/sidenav.component'
 // extras
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SearchComponent } from './components/common/header/tools/search/search.component';
+import { CardComponent } from './components/card/card.component';
+import { PagesContainerComponent } from './views/pages-container/pages-container.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,6 +52,8 @@ import { SearchComponent } from './components/common/header/tools/search/search.
     FooterComponent,
     SidenavComponent,
     SearchComponent,
+    CardComponent,
+    PagesContainerComponent,
   ],
   imports: [
     BrowserModule,
