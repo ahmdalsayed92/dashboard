@@ -1,0 +1,22 @@
+@import url('font-awesome.min.css');
+
+@font-face {
+    font-family: 'STC-Bold';
+    src: url('../font/STC-Bold.ttf');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'STC-Regular';
+    src: url('../font/STC-Medium.ttf');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'STC-Regular';
+    src: url('../font/STC-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
