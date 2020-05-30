@@ -1,89 +1,114 @@
 <!-- sidebar-search  -->
 <nav class="sidebar-wrapper">
-    <div class="sidebar-menu">
-        <ul>
+  <div class="sidebar-menu">
+    <ul>
+      <li routerLinkActive="actived">
+        <a [routerLink]="['/Home']">
+          <img src="../../../../assets/img/home.png" alt="" />
+          <span>Home</span>
+        </a>
+      </li>
+      <li routerLinkActive="actived">
+        <a [routerLink]="['/DashBorad']">
+          <img src="../../../../assets/img/home.png" alt="" />
+          <span>My Dashboard</span>
+        </a>
+      </li>
+      <li routerLinkActive="actived">
+        <a [routerLink]="['/Portfolios']">
+          <img src="../../../../assets/img/portfolios.png" alt="" />
+          <span>Portfolios</span>
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['/Programs']">
+          <img src="../../../../assets/img/programs.png" alt="" />
+          <span>Programs</span>
+        </a>
+      </li>
+      <li
+        class="sidebar-dropdown"
+        [ngClass]="{ active: projectsSubMenuActive }"
+      >
+        <a (click)="toggleProjectsSubMenu()">
+          <img src="../../../../assets/img/projects.png" alt="" />
+          <span>Projects</span>
+        </a>
+        <div class="sidebar-submenu">
+          <ul>
+            <li class="menu-title">Projects</li>
+
+            <li>
+              <a href="project-new.html"
+                ><img src="../../../../assets/img/logo2.png" alt="" /> Project
+                Creation</a
+              >
+            </li>
+            <li>
+              <a href="project-dash.html"
+                ><img src="../../../../assets/img/logo2.png" alt="" /> Projects
+                Cards</a
+              >
+            </li>
+            <li>
+              <a href="project-list.html"
+                ><img src="../../../../assets/img/logo2.png" alt="" /> Projects
+                List</a
+              >
+            </li>
+            <li>
+              <a href="healthindex.html"
+                ><img src="../../../../assets/img/logo2.png" alt="" /> Health
+                index</a
+              >
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li
+        class="sidebar-dropdown"
+        [ngClass]="{ active: Project360SubMenuActive }"
+      >
+        <a (click)="toggleProject360SubMenu()">
+          <img src="../../../../assets/img/plus.png" alt="" />
+          <span>Project 360</span>
+        </a>
+        <div class="sidebar-submenu">
+          <ul>
+            <li class="menu-title">Projects</li>
+
+            <li>
+              <a href="tab1.html"
+                ><img src="../../../../assets/img/logo2.png" alt="" />Initiation
+              </a>
+            </li>
+            <li>
+              <a href="tab3.html"
+                ><img src="../../../../assets/img/logo2.png" alt="" /> Planing
+              </a>
+            </li>
             <li class="actived">
-                <a href="home.html">
-                    <img src="../../../../assets/img/home.png" alt="">
-                    <span>Home</span>
-                </a>
+              <a href="tab2.html"
+                ><img src="../../../../assets/img/logo2.png" alt="" /> Execution
+                phase</a
+              >
             </li>
             <li>
-                <a href="Dashboard.html">
-                    <img src="../../../../assets/img/home.png" alt="">
-                    <span>My Dashboard</span>
-                </a>
+              <a href="add-new.html"
+                ><img src="../../../../assets/img/logo2.png" alt="" />Create
+                New</a
+              >
             </li>
             <li>
-                <a href="portfolio-list.html">
-                    <img src="../../../../assets/img/portfolios.png" alt="">
-                    <span>Portfolios</span>
-                </a>
+              <a href="benefit-realization.html"
+                ><img src="../../../../assets/img/logo2.png" alt="" /> Items
+                Card View</a
+              >
             </li>
-            <li>
-                <a href="programs-list.html">
-                    <img src="../../../../assets/img/programs.png" alt="">
-                    <span>Programs</span>
-                </a>
-            </li>
-            <li class="sidebar-dropdown" [ngClass]="{'active' : projectsSubMenuActive}">
-                <a (click)="toggleProjectsSubMenu()">
-                    <img src="../../../../assets/img/projects.png" alt="">
-                    <span>Projects</span>
-                </a>
-                <div class="sidebar-submenu">
-                    <ul>
-                        <li class="menu-title">Projects</li>
-
-                        <li>
-                            <a href="project-new.html"><img src="../../../../assets/img/logo2.png" alt=""> Project
-                                Creation</a>
-                        </li>
-                        <li>
-                            <a href="project-dash.html"><img src="../../../../assets/img/logo2.png" alt=""> Projects
-                                Cards</a>
-                        </li>
-                        <li>
-                            <a href="project-list.html"><img src="../../../../assets/img/logo2.png" alt=""> Projects
-                                List</a>
-                        </li>
-                        <li>
-                            <a href="healthindex.html"><img src="../../../../assets/img/logo2.png" alt=""> Health
-                                index</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li class="sidebar-dropdown" [ngClass]="{'active' : Project360SubMenuActive}">
-                <a (click)="toggleProject360SubMenu()">
-                    <img src="../../../../assets/img/plus.png" alt="">
-                    <span>Project 360</span>
-                </a>
-                <div class="sidebar-submenu">
-                    <ul>
-                        <li class="menu-title">Projects</li>
-
-                        <li>
-                            <a href="tab1.html"><img src="../../../../assets/img/logo2.png" alt="">Initiation </a>
-                        </li>
-                        <li>
-                            <a href="tab3.html"><img src="../../../../assets/img/logo2.png" alt=""> Planing </a>
-                        </li>
-                        <li class="actived">
-                            <a href="tab2.html"><img src="../../../../assets/img/logo2.png" alt=""> Execution phase</a>
-                        </li>
-                        <li>
-                            <a href="add-new.html"><img src="../../../../assets/img/logo2.png" alt="">Create New</a>
-                        </li>
-                        <li>
-                            <a href="benefit-realization.html"><img src="../../../../assets/img/logo2.png" alt=""> Items
-                                Card
-                                View</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-        </ul>
-    </div>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
 </nav>
 <!-- sidebar-menu  -->
