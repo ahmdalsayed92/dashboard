@@ -20,13 +20,14 @@
           <span>Portfolios</span>
         </a>
       </li>
-      <li>
+      <li routerLinkActive="actived">
         <a [routerLink]="['/Programs']">
           <img src="../../../../assets/img/programs.png" alt="" />
           <span>Programs</span>
         </a>
       </li>
       <li
+        routerLinkActive="actived"
         class="sidebar-dropdown"
         [ngClass]="{ active: projectsSubMenuActive }"
       >
