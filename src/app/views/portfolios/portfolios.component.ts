@@ -1,12 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { PortfolioListService } from "../../services/portfolio-list.service";
 
 @Component({
-  selector: 'app-portfolios',
-  templateUrl: './portfolios.component.html',
-  styleUrls: ['./portfolios.component.scss'],
+  selector: "app-portfolios",
+  templateUrl: "./portfolios.component.html",
+  styleUrls: ["./portfolios.component.scss"],
 })
 export class PortfoliosComponent implements OnInit {
-  constructor() {}
+  constructor(private PortfolioListService: PortfolioListService) {}
+  pageType = "portfolios-list";
+  pageDetails;
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getPageDetails();
+  }
+
+  getPageDetails() {
+    this.PortfolioListService.getJSON().subscribe((details) => {
+      this.pageDetails = details.PortfolioList;
+    });
+  }
 }

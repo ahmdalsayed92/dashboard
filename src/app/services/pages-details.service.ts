@@ -49,20 +49,8 @@ export class PagesDetailsService {
       path: "/Profile",
     },
   ];
-  pageDetails;
+
   getPageDetails(path) {
-    // console.log(path);
     return this.pages.filter((p) => p.path === path);
-    // this.pages.forEach((i) => {
-    //   console.log(i);
-    //   this.pageDetails = {
-    //     title: i.title,
-    //     subTitle: i.subTitle,
-    //     type: i.type,
-    //   };
-    // });
-    // return this.pageDetails;
-    // this.pageDetails = {}
-    // console.log(this.pageDetails);
   }
 }

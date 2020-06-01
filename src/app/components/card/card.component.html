@@ -1,17 +1,16 @@
 <div class="card">
   <div class="card-header">
     <h4 class="card-title">
-      <span class="material-icons-outlined card-icon">emoji_objects</span>SIMPLY
-      DUMMY THE PRINTING
+      <span class="material-icons-outlined card-icon">emoji_objects</span
+      >{{ cardDetails.Name }}
     </h4>
   </div>
   <div class="card-body">
     <div class="card-status">
-      <span class="badge badge-primary">Not Complete</span>
+      <span class="badge badge-primary">{{ cardDetails.Status }}</span>
     </div>
     <p class="card-text">
-      Are for description without title as for description without title as
-      image
+      {{ cardDetails.Description }}
     </p>
 
     <div class="card-info">
@@ -20,28 +19,28 @@
           <img class="ico" src="../../../assets/img/ico01.png" alt="" />
           budget:
         </div>
-        <div class="col-md-6">25,654,655,00</div>
+        <div class="col-md-6">{{ cardDetails.Budget }}</div>
       </div>
       <div class="row mb-2">
         <div class="col-md-6">
           <img class="ico" src="../../../assets/img/ico02.png" alt="" />
           Consumed:
         </div>
-        <div class="col-md-6">33,654,10</div>
+        <div class="col-md-6">{{ cardDetails.Consumed }}</div>
       </div>
-      <div class="row mb-2">
+      <div class="row mb-2" *ngIf="pageType !== 'programs-list'">
         <div class="col-md-6">
           <img class="ico" src="../../../assets/img/ico03.png" alt="" />
           programs:
         </div>
-        <div class="col-md-6">60</div>
+        <div class="col-md-6">{{ cardDetails.Programs }}</div>
       </div>
       <div class="row mb-2">
         <div class="col-md-6">
           <img class="ico" src="../../../assets/img/ico04.png" alt="" />
           projects:
         </div>
-        <div class="col-md-6">2</div>
+        <div class="col-md-6">{{ cardDetails.Projects }}</div>
       </div>
     </div>
     <div class="border-top progress-bar-text mt-4 pl-3 pr-3 pt-3">

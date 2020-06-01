@@ -1,19 +1,19 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class PortfolioListService {
-
   constructor(private http: HttpClient) {
-    this.getJSON().subscribe(data => {
-        console.log(data);
+    this.getJSON().subscribe((data) => {
+      console.log(data);
+      return data;
     });
-}
+  }
 
   public getJSON(): Observable<any> {
-      return this.http.get('./assets/data/portfolio-list.json');
+    return this.http.get("./assets/data/portfolio-list.json");
   }
 }

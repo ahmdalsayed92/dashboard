@@ -18,7 +18,7 @@
         right: 0;
         top: 0;
         bottom: 0;
-        left: 67px;
+        left: 54px;
         z-index: 9;
         width: 0;
         transition: width 0.2s ease-in-out;
@@ -40,7 +40,7 @@
 
       &.active .sidebar-submenu {
         display: block;
-        width: calc(100% - 67px);
+        width: calc(100% - 54px);
         transition: width 0.2s ease-in-out;
       }
     }
