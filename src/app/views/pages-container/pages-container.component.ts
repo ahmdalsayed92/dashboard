@@ -16,7 +16,6 @@ export class PagesContainerComponent implements OnInit {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         const path = event.url;
-        console.log(path);
         this.pageDetails = this.PagesDetailsService.getPageDetails(path);
         this.pageDetails.forEach((i) => {
           this.pageDetails = {

@@ -1,18 +1,5 @@
 <div class="row">
-  <div class="col-md-2 col-lg-4">
-    <app-card></app-card>
-  </div>
-
-  <div class="col-md-2 col-lg-4">
-    <app-card></app-card>
-  </div>
-  <div class="col-md-2 col-lg-4">
-    <app-card></app-card>
-  </div>
-  <div class="col-md-2 col-lg-4">
-    <app-card></app-card>
-  </div>
-  <div class="col-md-2 col-lg-4">
-    <app-card></app-card>
+  <div class="col-md-2 col-lg-4" *ngFor="let card of pageDetails">
+    <app-card [pageType]="pageType" [cardDetails]="card"></app-card>
   </div>
 </div>
