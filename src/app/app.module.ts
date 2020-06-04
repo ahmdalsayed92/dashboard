@@ -36,6 +36,7 @@ import { ChartsModule } from "ng2-charts";
 import { KnobModule } from "@xmlking/ngx-knob";
 import { GoogleChartsModule } from "angular-google-charts";
 import { HealthIndexComponent } from './views/health-index/health-index.component';
+import { TableComponent } from './components/table/table.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { HealthIndexComponent } from './views/health-index/health-index.componen
     CardComponent,
     PagesContainerComponent,
     HealthIndexComponent,
+    TableComponent,
   ],
   imports: [
     BrowserModule,

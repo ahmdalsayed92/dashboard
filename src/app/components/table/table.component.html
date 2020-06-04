@@ -1,0 +1,223 @@
+<h5 class="box-title">
+  {{ tableData.title }}
+  <button
+    type="button"
+    class="btn btn-bar float-right ml-2"
+    *ngIf="tableData.barButton"
+  >
+    <span class="material-icons">
+      menu
+    </span>
+  </button>
+
+  <button
+    type="button"
+    class="btn float-right ml-2"
+    *ngFor="let button of tableData.buttons"
+    [ngStyle]="{ 'background-color': button.color }"
+  >
+    {{ button.text }} <span class="badge badge-light">02</span>
+  </button>
+</h5>
+<div class="table-responsive">
+  <table
+    class="table table-hover table-striped responsive nowrap table-borderless"
+    cellspacing="0"
+    width="100%"
+  >
+    <thead>
+      <tr>
+        <th style="width: 60px;">Approve</th>
+        <th style="width: 50px; padding: 0.35rem;" class="text-center">
+          <span class="material-icons text-pink">
+            priority_high
+          </span>
+        </th>
+        <th>Work List</th>
+        <th>Project Name</th>
+        <th class="lastcell">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="text-right">
+          <div class="custom-control custom-checkbox">
+            <input
+              type="checkbox"
+              class="custom-control-input"
+              id="customCheck1"
+              checked
+            />
+            <label class="custom-control-label" for="customCheck1"></label>
+          </div>
+        </td>
+        <td class="text-center">
+          <a href="#"
+            ><span class="material-icons text-pink">
+              priority_high
+            </span></a
+          >
+        </td>
+        <td>Planning to Execution Approval</td>
+        <td>Digital Transformation</td>
+        <td class="lastcell">
+          <a href="#"
+            ><span class="material-icons text-pink">
+              delete
+            </span></a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="text-right">
+          <div class="custom-control custom-checkbox">
+            <input
+              type="checkbox"
+              class="custom-control-input"
+              id="customCheck2"
+            />
+            <label class="custom-control-label" for="customCheck2"></label>
+          </div>
+        </td>
+        <td class="text-center">
+          <a href="#"
+            ><span class="material-icons">
+              priority_high
+            </span></a
+          >
+        </td>
+        <td>Project Planning</td>
+        <td>Procure-to-Pay automation</td>
+        <td class="lastcell">
+          <a href="#"
+            ><span class="material-icons text-pink">
+              delete
+            </span></a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="text-right">
+          <div class="custom-control custom-checkbox">
+            <input
+              type="checkbox"
+              class="custom-control-input"
+              id="customCheck3"
+              checked
+            />
+            <label class="custom-control-label" for="customCheck3"></label>
+          </div>
+        </td>
+        <td class="text-center">
+          <a href="#"
+            ><span class="material-icons text-pink">
+              priority_high
+            </span></a
+          >
+        </td>
+        <td>Project Charter</td>
+        <td>mySTC Revamp</td>
+        <td class="lastcell">
+          <a href="#"
+            ><span class="material-icons text-pink">
+              delete
+            </span></a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="text-right">
+          <div class="custom-control custom-checkbox">
+            <input
+              type="checkbox"
+              class="custom-control-input"
+              id="customCheck4"
+            />
+            <label class="custom-control-label" for="customCheck4"></label>
+          </div>
+        </td>
+        <td class="text-center">
+          <a href="#"
+            ><span class="material-icons">
+              priority_high
+            </span></a
+          >
+        </td>
+        <td>Base Line</td>
+        <td>ERP Upgrade</td>
+        <td class="lastcell">
+          <a href="#"
+            ><span class="material-icons text-pink">
+              delete
+            </span></a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="text-right">
+          <div class="custom-control custom-checkbox">
+            <input
+              type="checkbox"
+              class="custom-control-input"
+              id="customCheck5"
+            />
+            <label class="custom-control-label" for="customCheck5"></label>
+          </div>
+        </td>
+        <td class="text-center">
+          <a href="#"
+            ><span class="material-icons">
+              priority_high
+            </span></a
+          >
+        </td>
+        <td>Project Charter</td>
+        <td>ERP Upgrade</td>
+        <td class="lastcell">
+          <a href="#"
+            ><span class="material-icons text-pink">
+              delete
+            </span></a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="text-right">
+          <div class="custom-control custom-checkbox">
+            <input
+              type="checkbox"
+              class="custom-control-input"
+              id="customCheck6"
+            />
+            <label class="custom-control-label" for="customCheck6"></label>
+          </div>
+        </td>
+        <td class="text-center">
+          <a href="#"
+            ><span class="material-icons text-pink">
+              priority_high
+            </span></a
+          >
+        </td>
+        <td>Project Closure</td>
+        <td>Revenue Assurance</td>
+        <td class="lastcell">
+          <a href="#"
+            ><span class="material-icons text-pink">
+              delete
+            </span></a
+          >
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="btn-group">
+  <a
+    href="#"
+    class="btn btnpurple"
+    data-toggle="modal"
+    data-target="#addnewcharter"
+    ><i class="fa fa-done"></i> Submit</a
+  >
+</div>

@@ -1,1 +1,37 @@
-<p>home page</p>
+<div class="row nav-cards">
+  <div class="col-md-3">
+    <div class="nav-card-item">
+      <img src="../../../assets/img/dash1w.png" alt="" />
+      <p class="nav-card-text">
+        portfolios
+      </p>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="nav-card-item">
+      <img src="../../../assets/img/dash2w.png" alt="" />
+      <p class="nav-card-text">
+        programs
+      </p>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="nav-card-item">
+      <img src="../../../assets/img/dash3w.png" alt="" />
+      <p class="nav-card-text">
+        projects
+      </p>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="nav-card-item">
+      <img src="../../../assets/img/dash4w.png" alt="" />
+      <p class="nav-card-text">
+        work list
+      </p>
+    </div>
+  </div>
+</div>
+<div class="box p-4 mt-4">
+  <app-table [tableData]="MyWorkListTableData"></app-table>
+</div>

@@ -1,0 +1,38 @@
+table {
+  .lastcell {
+    text-align: center;
+  }
+  .material-icons {
+    color: #738289;
+  }
+}
+.custom-control-input:checked ~ .custom-control-label::before {
+  color: #fff;
+  border-color: #4f008c;
+  background-color: #4f008c;
+}
+.box-title {
+  border-bottom: 1px solid #e8e8e8;
+  margin-bottom: 20px;
+  padding: 0 0 20px 0;
+  font-size: 16px;
+  color: #ff375e;
+  line-height: 32px;
+  font-weight: 500;
+
+  button {
+    color: #fff;
+    font-size: 12px;
+    padding: 0 0 0 8px;
+
+    &.btn-bar {
+      color: #212529;
+    }
+    &.btn-important {
+      background: #ff0000;
+    }
+    &.btn-done {
+      background: #4f008c;
+    }
+  }
+}

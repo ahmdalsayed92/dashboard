@@ -27,4 +27,21 @@ body {
 body {
   margin: 0;
   font-family: "STC-Regular";
+  font-size: 15px;
+}
+.text-pink {
+  color: #ff375e !important;
+}
+.no-border {
+  border: none !important;
+}
+th {
+  font-weight: 500;
+}
+.btn.btnpurple {
+  background: #4f008c;
+  color: #fff;
+  margin-left: 6px;
+  font-size: 13px;
+  margin-top: 5px;
 }

@@ -1,0 +1,69 @@
+.nav-cards {
+  .nav-card-item {
+    background-color: #4f008c;
+    border-color: #4f008c;
+    border-bottom: 4px solid #320059;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.25rem;
+    display: flex;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    &:hover {
+      background-color: #320059;
+      border-color: #2c004e;
+    }
+    .nav-card-text {
+      line-height: 64px;
+      margin: 0;
+      font-size: 1.5em;
+      color: #fff;
+      text-transform: capitalize;
+      font-weight: 600;
+    }
+    img {
+      margin-right: 20px;
+    }
+  }
+}
+.box {
+  padding: 15px;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.02), 0 1px 1px rgba(0, 0, 0, 0.04);
+  border-radius: 2px;
+  margin-bottom: 25px;
+  background: #fff;
+  transition: box-shadow 0.5s ease-in-out;
+  .box-title {
+    border-bottom: 1px solid #e8e8e8;
+    margin-bottom: 20px;
+    padding: 0 0 20px 0;
+    font-size: 16px;
+    color: #ff375e;
+    line-height: 32px;
+    font-weight: 500;
+
+    button {
+      color: #fff;
+      font-size: 12px;
+      padding: 0 0 0 8px;
+
+      &.btn-bar {
+        color: #212529;
+      }
+      &.btn-important {
+        background: #ff0000;
+      }
+      &.btn-done {
+        background: #4f008c;
+      }
+    }
+  }
+}
+.badge.badge-light {
+  font-size: 12px;
+  padding: 3px 5px;
+  top: 0;
+  margin-left: 5px;
+  display: inline-block;
+  background: #fff;
+  font-weight: 400;
+}
