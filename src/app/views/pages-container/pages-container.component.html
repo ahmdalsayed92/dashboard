@@ -1,8 +1,10 @@
 <div class="page-container" *ngIf="pageDetails">
-  <h1 class="page-title mb-0">
+  <h1 class="page-title mb-0" *ngIf="pageDetails.title">
     {{ pageDetails.title }}
   </h1>
-  <p class="subtitle">{{ pageDetails.subTitle }}</p>
+  <p class="subtitle" *ngIf="pageDetails.subTitle">
+    {{ pageDetails.subTitle }}
+  </p>
   <div class="page-viewer">
     <router-outlet></router-outlet>
   </div>

@@ -22,6 +22,13 @@ export class PagesDetailsService {
     },
     {
       id: "",
+      title: "health index",
+      subTitle: "sub title",
+      type: "healthIndex",
+      path: "/HealthIndex",
+    },
+    {
+      id: "",
       title: "portfolios",
       subTitle: "sub title",
       type: "portfolios-list",

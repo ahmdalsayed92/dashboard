@@ -1,0 +1,86 @@
+.page-title {
+  margin-top: 20px;
+  color: #500391;
+  font-weight: 600;
+  font-size: 24px;
+  width: 100%;
+  text-transform: capitalize;
+}
+.badge {
+  margin: 18px 0 18px 10px;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 2px;
+  font-weight: 400;
+  &.badge-primary {
+    background-color: #ff375e;
+  }
+  &.badge-secondary {
+    background-color: #ae8bc7;
+  }
+}
+.subtitle {
+  color: #cdd0d1;
+  font-size: 14px;
+  font-weight: 300;
+  font-style: italic;
+  display: block;
+  text-transform: capitalize;
+}
+.text-black-50 {
+  color: rgba(0, 0, 0, 0.7) !important;
+  font-weight: 500;
+}
+
+.box {
+  padding: 15px;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.02), 0 1px 1px rgba(0, 0, 0, 0.04);
+  border-radius: 2px;
+  margin-bottom: 25px;
+  background: #fff;
+  transition: box-shadow 0.5s ease-in-out;
+
+  .box-title {
+    border-bottom: 1px solid #e8e8e8;
+    margin: -15px -15px 15px -15px;
+    padding: 15px;
+    font-size: 16px;
+    color: #ff375e;
+    img {
+      width: 24px;
+      margin-right: 5px;
+    }
+  }
+  .progress-bar-text {
+    margin-bottom: 15px;
+    strong {
+      color: #1d252d;
+      font-weight: 600;
+      font-size: 13px;
+    }
+    .progress-stc {
+      height: 7px;
+      overflow: initial;
+      background: #d7d7d7;
+      margin-top: 3px !important;
+      border-radius: 0;
+    }
+    .progress-bar {
+      background-color: #ff375e;
+    }
+  }
+  .text-pink {
+    color: #ff375e;
+  }
+  h5 {
+    font-size: 14px;
+    color: #777777;
+  }
+
+  .radial-progress {
+    strong {
+      font-weight: 600;
+      font-size: 1.25rem;
+    }
+  }
+}

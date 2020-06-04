@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { PortfolioListService } from "../../services/portfolio-list.service";
-
+import { Observable, from } from "rxjs";
+import { Portfolio } from "../../models/portfolio";
 @Component({
   selector: "app-portfolios",
   templateUrl: "./portfolios.component.html",
@@ -9,7 +10,7 @@ import { PortfolioListService } from "../../services/portfolio-list.service";
 export class PortfoliosComponent implements OnInit {
   constructor(private PortfolioListService: PortfolioListService) {}
   pageType = "portfolios-list";
-  pageDetails;
+  pageDetails: Observable<Portfolio>;
 
   ngOnInit(): void {
     this.getPageDetails();

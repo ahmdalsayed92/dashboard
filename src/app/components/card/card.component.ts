@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from "@angular/core";
 })
 export class CardComponent implements OnInit {
   @Input() pageType: string;
-  @Input() cardDetails: [];
+  @Input() cardDetails;
   constructor() {}
 
   ngOnInit(): void {}

@@ -9,17 +9,23 @@ import { MyDashBoardComponent } from "./views/my-dash-board/my-dash-board.compon
 import { ProjectAllComponent } from "./views/project-all/project-all.component";
 import { ProfileComponent } from "./views/profile/profile.component";
 import { ProjectsComponent } from "./views/projects/projects.component";
+import { PortfolioComponent } from "./views/portfolios/portfolio/portfolio.component";
+import { ProgramComponent } from "./views/programs/program/program.component";
+import { HealthIndexComponent } from "./views/health-index/health-index.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "Home", pathMatch: "full" },
   { path: "Home", component: HomeComponent },
   { path: "DashBorad", component: MyDashBoardComponent },
+  { path: "HealthIndex", component: HealthIndexComponent },
   { path: "Portfolios", component: PortfoliosComponent },
   { path: "Programs", component: ProgramsComponent },
   { path: "Project", component: ProjectComponent },
   { path: "Projects", component: ProjectsComponent },
-  { path: "Project360", component: ProjectAllComponent },
   { path: "Profile", component: ProfileComponent },
+  { path: "PortfolioDetails/:id", component: PortfolioComponent },
+  { path: "ProgramDetails/:id", component: ProgramComponent },
+  { path: "ProgramDetails/:id", component: ProgramComponent },
 ];
 
 @NgModule({

@@ -1,6 +1,9 @@
 @import url("../../../../assets/style/shared.css");
 
 .sidebar-wrapper {
+  width: 280px;
+  position: fixed;
+  left: 0;
   height: calc(100vh - 66px);
   font-family: "STC-Regular";
   font-size: 14px;

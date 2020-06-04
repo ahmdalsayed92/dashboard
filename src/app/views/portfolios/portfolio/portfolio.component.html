@@ -1,1 +1,227 @@
-<p>portfolio works!</p>
+<div *ngFor="let portfolio of pageDetails">
+  <div class="page-header-container d-flex">
+    <h1 class="page-title">
+      {{ portfolio.Name }}
+    </h1>
+    <span class="badge badge-primary align-self-center">Start: 10/10/2020</span>
+    <span class="badge badge-secondary align-self-center">End: 13/13/2023</span>
+  </div>
+  <p class="text-black-50 n-upper text-justify">
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    Lorem Ipsum has been the industry's standard dummy text ever since the
+    1500s, when an unknown printer took a galley of type and scrambled it to
+    make a type specimen book. It has survived not only five centuries, but also
+    the leap into electronic typesetting, remaining essentially unchanged.
+  </p>
+  <div class="box">
+    <h5 class="box-title">
+      <img src="../../../../assets/img/icon2.png" alt="" /> Progress
+    </h5>
+    <div
+      class="d-flex flex-column flex-md-row justify-content-between summaryrow1 text-center"
+    >
+      <div class="col text-left mr-5">
+        <div class="progress-bar-text">
+          <strong>Actual</strong>
+          <strong class="float-right">55%</strong>
+          <div class="progress progress-xs progress-stc mt-2">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              style="width: 55%;"
+              aria-valuenow="6"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            ></div>
+          </div>
+        </div>
+
+        <div class="progress-bar-text">
+          <strong>Actual</strong>
+          <strong class="float-right">75%</strong>
+          <div class="progress progress-xs progress-stc mt-2">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              style="width: 75%;"
+              aria-valuenow="6"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            ></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col border-right">
+        <h1 class="font-weight-bold text-pink">25563</h1>
+        <h5>Total Programs</h5>
+      </div>
+      <div class="col border-right">
+        <h1 class="font-weight-bold text-pink">6952</h1>
+        <h5>Total Projects</h5>
+      </div>
+      <div class="col pr-0">
+        <h1 class="font-weight-bold text-pink">18361</h1>
+        <h5>Health index</h5>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="box">
+        <h5 class="box-title">
+          <img src="../../../../assets/img/icon2.png" alt="" /> Total Budget
+          <strong class="text-pink float-right">25,000,000</strong>
+        </h5>
+        <div class="row">
+          <div class="col-md-6 radial-progress">
+            <h5>consumed budget</h5>
+            <strong class="text-pink pr-2 mr-2">10.53M</strong>
+            <strong class="text-pink pr-2 mr-2">42.12%</strong>
+            <h5 class="mt-4">Increase in consumption</h5>
+            <strong class="text-pink pr-2 mr-2">5.53M</strong>
+            <strong class="text-pink pr-2 mr-2">12.12%</strong>
+          </div>
+          <div class="col-md-6">
+            <div class="chart">
+              <ngx-knob [value]="value" [options]="options"></ngx-knob>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <h5 class="box-title">
+          <img src="../../../../assets/img/icon2.png" alt="" />Budget allocated
+          per program
+        </h5>
+        <div style="height: 350px;">
+          <!-- <canvas
+            baseChart
+            [datasets]="donutChart.data.datasets"
+            [labels]="donutChart.data.labels"
+            [chartType]="donutChart.type"
+            [options]="donutChart.options"
+          ></canvas> -->
+
+          <google-chart
+            [type]="googleChart.type"
+            [data]="googleChart.data"
+            [columns]="googleChart.chartColumns"
+            [options]="googleChart.options"
+            style="width: 100%; height: 100%;"
+          >
+          </google-chart>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="box">
+        <h5 class="box-title">
+          <img src="../../../../assets/img/icon2.png" alt="" /> Programes
+          Progress
+        </h5>
+        <div class="progress-bar-text mt-4 pl-3 pr-3">
+          <a href="programs.html"><strong>Software Project Proposal</strong></a>
+          <strong class="pull-right">90%</strong>
+          <div class="progress progress-xs progress-stc mt-2">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              style="width: 90%;"
+              aria-valuenow="6"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            ></div>
+          </div>
+        </div>
+
+        <div class="progress-bar-text mt-4 pl-3 pr-3">
+          <a href="programs.html"><strong>Technology Proposal</strong></a>
+          <strong class="pull-right">20%</strong>
+          <div class="progress progress-xs progress-stc mt-2">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              style="width: 20%;"
+              aria-valuenow="6"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            ></div>
+          </div>
+        </div>
+        <div class="progress-bar-text mt-4 pl-3 pr-3">
+          <a href="programs.html"><strong>Formal Software Project</strong></a>
+          <strong class="pull-right">50%</strong>
+          <div class="progress progress-xs progress-stc mt-2">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              style="width: 50%;"
+              aria-valuenow="6"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            ></div>
+          </div>
+        </div>
+
+        <div class="progress-bar-text mt-4 pl-3 pr-3">
+          <a href="programs.html"><strong>Software Development</strong></a>
+          <strong class="pull-right">62%</strong>
+          <div class="progress progress-xs progress-stc mt-2">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              style="width: 62%;"
+              aria-valuenow="6"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            ></div>
+          </div>
+        </div>
+        <div class="progress-bar-text mt-4 pl-3 pr-3">
+          <a href="programs.html"><strong>Software Engineering</strong></a>
+          <strong class="pull-right">80%</strong>
+          <div class="progress progress-xs progress-stc mt-2">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              style="width: 80%;"
+              aria-valuenow="6"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            ></div>
+          </div>
+        </div>
+
+        <div class="progress-bar-text mt-4 pl-3 pr-3">
+          <a href="programs.html"><strong>Ultimate Guide</strong></a>
+          <strong class="pull-right">100%</strong>
+          <div class="progress progress-xs progress-stc mt-2">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              style="width: 100%;"
+              aria-valuenow="6"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            ></div>
+          </div>
+        </div>
+        <div class="progress-bar-text mb-4 mt-4 pl-3 pr-3">
+          <a href="programs.html"><strong>Other</strong></a>
+          <strong class="pull-right">25%</strong>
+          <div class="progress progress-xs progress-stc mt-2">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              style="width: 25%;"
+              aria-valuenow="6"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
