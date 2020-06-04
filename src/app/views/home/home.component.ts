@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
     ],
     barButton: true,
     colsHeaders: ["Approve", "Work List", "Project Name", "Delete"],
+    priorityCol: true,
     rowsData: [
       {
         workList: "Planning to Execution Approval",

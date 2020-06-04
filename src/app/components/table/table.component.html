@@ -27,39 +27,44 @@
   >
     <thead>
       <tr>
-        <th style="width: 60px;">Approve</th>
+        <th style="width: 60px;">{{ tableData.colsHeaders[0] }}</th>
         <th style="width: 50px; padding: 0.35rem;" class="text-center">
           <span class="material-icons text-pink">
             priority_high
           </span>
         </th>
-        <th>Work List</th>
-        <th>Project Name</th>
-        <th class="lastcell">Delete</th>
+        <th>{{ tableData.colsHeaders[1] }}</th>
+        <th>{{ tableData.colsHeaders[2] }}</th>
+        <th class="lastcell">{{ tableData.colsHeaders[3] }}</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
+      <tr *ngFor="let row of tableData.rowsData; let i = index">
         <td class="text-right">
           <div class="custom-control custom-checkbox">
             <input
               type="checkbox"
               class="custom-control-input"
-              id="customCheck1"
-              checked
+              id="customCheck1{{ i }}"
             />
-            <label class="custom-control-label" for="customCheck1"></label>
+            <label
+              class="custom-control-label"
+              for="customCheck1{{ i }}"
+            ></label>
           </div>
         </td>
         <td class="text-center">
           <a href="#"
-            ><span class="material-icons text-pink">
+            ><span
+              class="material-icons"
+              [ngClass]="{ 'text-pink': row.priority == 'high' }"
+            >
               priority_high
             </span></a
           >
         </td>
-        <td>Planning to Execution Approval</td>
-        <td>Digital Transformation</td>
+        <td>{{ row.workList }}</td>
+        <td>{{ row.projectName }}</td>
         <td class="lastcell">
           <a href="#"
             ><span class="material-icons text-pink">
@@ -68,7 +73,7 @@
           >
         </td>
       </tr>
-      <tr>
+      <!-- <tr>
         <td class="text-right">
           <div class="custom-control custom-checkbox">
             <input
@@ -208,7 +213,7 @@
             </span></a
           >
         </td>
-      </tr>
+      </tr> -->
     </tbody>
   </table>
 </div>
