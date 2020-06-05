@@ -1,1 +1,199 @@
-<p>my dashboard page</p>
+<div class="tweet">
+  <i class="fa fa-twitter"></i>
+  <h2>UX Note</h2>
+  <p>
+    This is My dashboard, showing my current projects (Owner or Participant), in
+    addition to my Activities
+  </p>
+</div>
+<div class="d-flex flex-column flex-md-row justify-content-between row">
+  <div class="col-md-3">
+    <div class="box pt-4 pb-4">
+      <div
+        class="d-flex flex-column flex-md-row justify-content-between summaryrow1 text-center"
+      >
+        <div class=""><img src="../../../assets/img/dash1.png" alt="" /></div>
+        <div class="col text-left pr-0">
+          <h2 class="font-weight-bold text-pink">25563</h2>
+          <h5>Total Programs</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="box pt-4 pb-4">
+      <div
+        class="d-flex flex-column flex-md-row justify-content-between summaryrow1 text-center"
+      >
+        <div class=""><img src="../../../assets/img/dash2.png" alt="" /></div>
+        <div class="col text-left pr-0">
+          <h2 class="font-weight-bold text-pink">987501</h2>
+          <h5>Total Projects</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="box pt-4 pb-4">
+      <div
+        class="d-flex flex-column flex-md-row justify-content-between summaryrow1 text-center"
+      >
+        <div class=""><img src="../../../assets/img/dash3.png" alt="" /></div>
+        <div class="col text-left pr-0">
+          <h2 class="font-weight-bold text-pink">1027234</h2>
+          <h5>Total Tasks</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="box pt-4 pb-4">
+      <div
+        class="d-flex flex-column flex-md-row justify-content-between summaryrow1 text-center"
+      >
+        <div class=""><img src="../../../assets/img/dash4.png" alt="" /></div>
+        <div class="col text-left pr-0">
+          <h2 class="font-weight-bold text-pink">514</h2>
+          <h5>TODO List</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="d-flex flex-column flex-md-row justify-content-between row">
+  <div class="col-md-6">
+    <div class="box prl-30">
+      <h5 class="box-title">
+        My projects
+
+        <button type="button" class="btn btn-high float-right">
+          Delayed <span class="badge badge-light">03</span>
+        </button>
+        <button type="button" class="btn btn-medium float-right">
+          Not Started <span class="badge badge-light">01</span>
+        </button>
+        <button type="button" class="btn btn-low float-right">
+          In Progress <span class="badge badge-light">02</span>
+        </button>
+      </h5>
+      <table class="table table-striped no-border table-borderless">
+        <thead>
+          <tr>
+            <th>Projects Name</th>
+            <th>Status</th>
+            <th>Deadline</th>
+            <th>My Role</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="project-details.html">Digital Transformation</a></td>
+            <td class="low">In Progress</td>
+            <td>27/04/2020</td>
+            <td>Owner</td>
+          </tr>
+          <tr>
+            <td>
+              <a href="project-details.html">Revenue Assurance Project</a>
+            </td>
+            <td class="medium">Not Started</td>
+            <td>10/05/2019</td>
+            <td>Sponser</td>
+          </tr>
+          <tr>
+            <td><a href="project-details.html">ERP Upgrade</a></td>
+            <td class="medium">Not Started</td>
+            <td>20/12/2019</td>
+            <td>PM</td>
+          </tr>
+          <tr>
+            <td>
+              <a href="project-details.html">Procure-to-Pay Automation</a>
+            </td>
+            <td class="high">Delayed</td>
+            <td>01/12/2020</td>
+            <td>Participant</td>
+          </tr>
+          <tr>
+            <td><a href="project-details.html">mySTC Revamp</a></td>
+            <td class="low">In Progress</td>
+            <td>02/02/2020</td>
+            <td>Participant</td>
+          </tr>
+          <tr>
+            <td><a href="project-details.html">JIRA Upgrade</a></td>
+            <td class="high">Delayed</td>
+            <td>01/06/2020</td>
+            <td>Participant</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="box prl-30">
+      <h5 class="box-title">
+        My Activities
+
+        <button type="button" class="btn btn-high float-right">
+          High <span class="badge badge-light">02</span>
+        </button>
+        <button type="button" class="btn btn-medium float-right">
+          Medium <span class="badge badge-light">02</span>
+        </button>
+        <button type="button" class="btn btn-low float-right">
+          Low <span class="badge badge-light">02</span>
+        </button>
+      </h5>
+      <table class="table table-striped no-border table-borderless">
+        <thead>
+          <tr>
+            <th>Task title</th>
+            <th>Priority</th>
+            <th>Status</th>
+            <th>Due Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Time estimation is underrated</td>
+            <td class="high">High</td>
+            <td class="low">In Progress</td>
+            <td>01/06/2020</td>
+          </tr>
+          <tr>
+            <td>Software tool crashing</td>
+            <td class="low">Low</td>
+            <td class="high">Pending</td>
+            <td>01/06/2020</td>
+          </tr>
+          <tr>
+            <td>Resource overutilization</td>
+            <td class="medium">Medium</td>
+            <td class="high">On Hold</td>
+            <td>01/06/2020</td>
+          </tr>
+          <tr>
+            <td>Time estimation is underrated</td>
+            <td class="high">High</td>
+            <td class="low">In Progress</td>
+            <td>01/06/2020</td>
+          </tr>
+          <tr>
+            <td>Software tool crashing</td>
+            <td class="low">Low</td>
+            <td class="medium">New</td>
+            <td>01/06/2020</td>
+          </tr>
+          <tr>
+            <td>Resource overutilization</td>
+            <td class="medium">Medium</td>
+            <td class="high">Delayed</td>
+            <td>01/06/2020</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

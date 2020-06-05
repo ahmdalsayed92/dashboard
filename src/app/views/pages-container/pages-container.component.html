@@ -1,13 +1,21 @@
 <div class="page-container" *ngIf="pageDetails">
   <h1
     class="page-title mb-0"
-    *ngIf="pageDetails.title && pageDetails.type != 'home'"
+    *ngIf="
+      pageDetails.title &&
+      pageDetails.type != 'home' &&
+      pageDetails.type != 'dashboard'
+    "
   >
     {{ pageDetails.title }}
   </h1>
   <p
     class="subtitle"
-    *ngIf="pageDetails.subTitle && pageDetails.type != 'home'"
+    *ngIf="
+      pageDetails.subTitle &&
+      pageDetails.type != 'home' &&
+      pageDetails.type != 'dashboard'
+    "
   >
     {{ pageDetails.subTitle }}
   </p>

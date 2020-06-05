@@ -26,21 +26,7 @@
   }
 }
 .box {
-  padding: 15px;
-  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.02), 0 1px 1px rgba(0, 0, 0, 0.04);
-  border-radius: 2px;
-  margin-bottom: 25px;
-  background: #fff;
-  transition: box-shadow 0.5s ease-in-out;
   .box-title {
-    border-bottom: 1px solid #e8e8e8;
-    margin-bottom: 20px;
-    padding: 0 0 20px 0;
-    font-size: 16px;
-    color: #ff375e;
-    line-height: 32px;
-    font-weight: 500;
-
     button {
       color: #fff;
       font-size: 12px;
@@ -57,13 +43,4 @@
       }
     }
   }
-}
-.badge.badge-light {
-  font-size: 12px;
-  padding: 3px 5px;
-  top: 0;
-  margin-left: 5px;
-  display: inline-block;
-  background: #fff;
-  font-weight: 400;
 }

@@ -1,0 +1,49 @@
+.tweet {
+  background: #fff;
+  padding: 10px 15px 10px 85px;
+  margin: 0px auto 25px;
+  position: relative;
+  min-height: 70px;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.02), 0 1px 1px rgba(0, 0, 0, 0.04);
+
+  .fa-twitter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    font-size: 32px;
+    background: #ff375e;
+    padding: 0 20px;
+    color: #fff;
+    line-height: 70px;
+  }
+  h2 {
+    color: #000;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 5px 0;
+  }
+  p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1;
+    text-transform: none;
+    color: #303030;
+  }
+}
+button {
+  color: #fff;
+  font-size: 12px;
+  padding: 0 0 0 8px;
+  margin-left: 5px;
+
+  &.btn-low {
+    background: #1bced8;
+  }
+  &.btn-medium {
+    background: #767477;
+  }
+  &.btn-high {
+    background: #fe365e;
+  }
+}
