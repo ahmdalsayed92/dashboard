@@ -45,9 +45,9 @@
           <ul>
             <li class="menu-title">Projects</li>
 
-            <li>
-              <a href="project-new.html"
-                ><img src="../../../../assets/img/logo2.png" alt="" /> Project
+            <li [routerLink]="['/CreateProject']" routerLinkActive="actived">
+              <a>
+                <img src="../../../../assets/img/logo2.png" alt="" /> Project
                 Creation</a
               >
             </li>
@@ -57,8 +57,8 @@
                 Cards</a
               >
             </li>
-            <li>
-              <a href="project-list.html"
+            <li [routerLink]="['/ProjectsList']" routerLinkActive="actived">
+              <a
                 ><img src="../../../../assets/img/logo2.png" alt="" /> Projects
                 List</a
               >

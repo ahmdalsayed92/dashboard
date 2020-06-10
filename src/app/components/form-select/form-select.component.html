@@ -1,0 +1,21 @@
+<div class="select-wrapper" [ngClass]="{ 'has-error': valid }">
+  <label for="">{{ label }} <samp *ngIf="required">*</samp></label>
+  <input
+    type="text"
+    class="form-control"
+    [value]="selected"
+    (click)="openSelectSector()"
+    [placeholder]="placeholderText"
+  />
+  <span class="material-icons select-arrow">
+    keyboard_arrow_down
+  </span>
+  <div class="select-options" *ngIf="openSelect">
+    <option
+      value=""
+      *ngFor="let option of optionsList"
+      (click)="selectSector(option.value)"
+      >{{ option.value }}</option
+    >
+  </div>
+</div>

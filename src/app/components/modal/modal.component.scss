@@ -1,0 +1,18 @@
+.modal {
+  &.show {
+    display: block;
+  }
+}
+.modal-backdrop.show {
+  opacity: 0.9;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #1e0332;
+}
+.modal-body-text {
+  font-weight: 500;
+  font-size: 16px;
+}

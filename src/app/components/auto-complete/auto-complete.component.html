@@ -1,0 +1,25 @@
+<div class="ng-autocomplete" [ngClass]="{ 'has-error': valid }">
+  <ng-autocomplete
+    [data]="dataList"
+    [searchKeyword]="keyword"
+    (selected)="selectEvent($event)"
+    (inputChanged)="onChangeSearch($event)"
+    (inputFocused)="onFocused($event)"
+    [itemTemplate]="itemTemplate"
+    [notFoundTemplate]="notFoundTemplate"
+    [placeHolder]="'enter a name'"
+    (inputCleared)="onCleared($event)"
+  >
+  </ng-autocomplete>
+
+  <ng-template #itemTemplate let-item class="d-flex">
+    <img src="{{ item.avatar }}" alt="" />
+    <a [innerHTML]="item.name"></a>
+  </ng-template>
+
+  <ng-template #notFoundTemplate let-notFound>
+    <div [innerHTML]="notFound">
+      item not found
+    </div>
+  </ng-template>
+</div>

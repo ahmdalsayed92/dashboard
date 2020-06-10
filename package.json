@@ -26,6 +26,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@xmlking/ngx-knob": "^1.0.1",
     "angular-google-charts": "^1.1.4",
+    "angular-ng-autocomplete": "^2.0.1",
     "angular2-chartjs": "^0.5.1",
     "bootstrap": "^4.4.1",
     "c3-angular": "^1.4.0",

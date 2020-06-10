@@ -55,6 +55,20 @@ export class PagesDetailsService {
       type: "profile",
       path: "/Profile",
     },
+    {
+      id: "",
+      title: "Project Creation",
+      subTitle: "create new project",
+      type: "projectCreation",
+      path: "/CreateProject",
+    },
+    {
+      id: "",
+      title: "Projects List",
+      subTitle: "All List Of Projects",
+      type: "projectList",
+      path: "/ProjectsList",
+    },
   ];
 
   getPageDetails(path) {

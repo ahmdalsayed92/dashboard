@@ -1,3 +1,65 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import "~@angular/material/theming";
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$Octopus-EPM-Client-primary: mat-palette($mat-indigo);
+$Octopus-EPM-Client-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$Octopus-EPM-Client-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$Octopus-EPM-Client-theme: mat-light-theme(
+  $Octopus-EPM-Client-primary,
+  $Octopus-EPM-Client-accent,
+  $Octopus-EPM-Client-warn
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($Octopus-EPM-Client-theme);
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+// @import "~@angular/material/theming";
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+// @include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+// $Octopus-EPM-Client-primary: mat-palette($mat-indigo);
+// $Octopus-EPM-Client-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+// $Octopus-EPM-Client-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+// $Octopus-EPM-Client-theme: mat-light-theme(
+//   $Octopus-EPM-Client-primary,
+//   $Octopus-EPM-Client-accent,
+//   $Octopus-EPM-Client-warn
+// );
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+// @include angular-material-theme($Octopus-EPM-Client-theme);
+
 /* You can add global styles to this file, and also import other style files */
 @import "./assets/style/font-awesome.min.css";
 @font-face {
@@ -92,4 +154,113 @@ a:visited {
 }
 .medium {
   color: #212529;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.mat-snack-bar-container {
+  background-color: #4f008d !important;
+}
+::ng-deep .mat-button-wrapper {
+  color: #fff !important;
+}
+.btn.btn-light {
+  background: #f0f2f1;
+  line-height: 27px;
+}
+.invalid-feedback {
+  display: block;
+  width: 100%;
+  margin-top: 0.25rem;
+  color: #dc3545;
+}
+.has-error {
+  position: relative;
+  label {
+    color: #dc3545;
+  }
+  input {
+    border-color: #dc3545;
+    &.mat-input-element {
+      border-color: #dc3545 !important;
+    }
+
+    &:focus {
+      border-color: #dc3545 !important;
+    }
+  }
+  .material-icons {
+    position: absolute;
+    right: 8px;
+    top: 25px;
+    font-size: 19px;
+  }
+}
+.btn-primary {
+  color: #fff;
+  background-color: #4f008c;
+  border-color: #4f008c;
+
+  &:hover {
+    color: #fff;
+    background-color: #320059;
+    border-color: #2c004e;
+  }
+}
+.filter .form-control {
+  border-radius: 0.25rem;
+  height: 36px;
+  font-size: 14px;
+  background: #f7f9f8;
+  border: none !important;
+  font-weight: normal;
+}
+.filter .btn.btn-light i.fa {
+  font-size: 15px;
+}
+.filter .btn.btn-light {
+  background: #f0f2f1;
+  line-height: 27px;
+}
+.filter .btn,
+.filter .btn-group {
+  height: 36px;
+  font-size: 13px;
+}
+.box-title.filter {
+  margin-bottom: 20px;
+}
+.box.new {
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 0 6px rgba(162, 162, 162, 0.2);
+  margin-bottom: 25px;
+  margin-top: 0;
+  i {
+    color: #738289;
+  }
+}
+.filter .input-group .input-group-text {
+  background: #f0f2f1;
+  border: none;
+}
+.filter {
+  .btn {
+    margin-right: 7px;
+  }
 }

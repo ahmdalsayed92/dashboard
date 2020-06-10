@@ -12,6 +12,8 @@ import { ProjectsComponent } from "./views/projects/projects.component";
 import { PortfolioComponent } from "./views/portfolios/portfolio/portfolio.component";
 import { ProgramComponent } from "./views/programs/program/program.component";
 import { HealthIndexComponent } from "./views/health-index/health-index.component";
+import { CreateProjectComponent } from "./views/create-project/create-project.component";
+import { ProjectListComponent } from "./views/project-list/project-list.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "Home", pathMatch: "full" },
@@ -26,6 +28,8 @@ const routes: Routes = [
   { path: "PortfolioDetails/:id", component: PortfolioComponent },
   { path: "ProgramDetails/:id", component: ProgramComponent },
   { path: "ProgramDetails/:id", component: ProgramComponent },
+  { path: "CreateProject", component: CreateProjectComponent },
+  { path: "ProjectsList", component: ProjectListComponent },
 ];
 
 @NgModule({

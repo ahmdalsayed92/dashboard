@@ -7,6 +7,7 @@ import { AppComponent } from "./app.component";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
+import { ReactiveFormsModule } from "@angular/forms";
 
 // app views
 import { HomeComponent } from "./views/home/home.component";
@@ -35,9 +36,22 @@ import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { ChartsModule } from "ng2-charts";
 import { KnobModule } from "@xmlking/ngx-knob";
 import { GoogleChartsModule } from "angular-google-charts";
-import { HealthIndexComponent } from './views/health-index/health-index.component';
-import { TableComponent } from './components/table/table.component';
-
+import { HealthIndexComponent } from "./views/health-index/health-index.component";
+import { TableComponent } from "./components/table/table.component";
+import { CreateProjectComponent } from "./views/create-project/create-project.component";
+import { MatInputModule } from "@angular/material/input";
+import { MatSelectModule } from "@angular/material/select";
+import { MatDatepickerModule } from "@angular/material/datepicker";
+import { FormSelectComponent } from "./components/form-select/form-select.component";
+import { AutocompleteLibModule } from "angular-ng-autocomplete";
+import { AutoCompleteComponent } from "./components/auto-complete/auto-complete.component";
+import { MatNativeDateModule } from "@angular/material/core";
+import { ProjectListComponent } from "./views/project-list/project-list.component";
+import { ProjectsTableComponent } from "./components/projects-table/projects-table.component";
+import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { SearchPipe } from "./components/pipes/search-pipe.pipe";
+import { MatDialogModule } from "@angular/material/dialog";
+import { ModalComponent } from './components/modal/modal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,6 +76,13 @@ import { TableComponent } from './components/table/table.component';
     PagesContainerComponent,
     HealthIndexComponent,
     TableComponent,
+    CreateProjectComponent,
+    FormSelectComponent,
+    AutoCompleteComponent,
+    ProjectListComponent,
+    ProjectsTableComponent,
+    SearchPipe,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,10 +91,20 @@ import { TableComponent } from './components/table/table.component';
     AppRoutingModule,
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     FontAwesomeModule,
     KnobModule,
     ChartsModule,
     GoogleChartsModule,
+    MatInputModule,
+    MatSelectModule,
+    AutocompleteLibModule,
+    MatDatepickerModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatNativeDateModule,
+    MatSnackBarModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

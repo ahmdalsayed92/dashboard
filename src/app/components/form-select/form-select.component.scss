@@ -1,0 +1,51 @@
+label {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.form-control {
+  height: calc(1.5em + 0.5rem + 2px);
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+  cursor: pointer;
+}
+.form-control:focus {
+  border-color: #839198;
+  color: #839198;
+  box-shadow: none;
+}
+.select-wrapper {
+  position: relative;
+}
+.select-options {
+  position: absolute;
+  background: white;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  width: 100%;
+  border-radius: 4px;
+  z-index: 9;
+  transition: all 0.4s ease-in-out;
+
+  option {
+    padding: 10px 20px;
+    color: #495057;
+    font-size: 0.875rem;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.04);
+    }
+  }
+}
+
+.select-arrow {
+  position: absolute;
+  right: 4px;
+  top: 23px;
+}

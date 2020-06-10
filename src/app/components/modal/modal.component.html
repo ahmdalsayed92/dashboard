@@ -1,0 +1,18 @@
+<div class="modal" id="delete-modal" [ngClass]="{ show: open }">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="box">
+        <h6 class="box-title">Project Created</h6>
+
+        <h6 class="modal-body-text">project created successfuly</h6>
+
+        <div class="btn-modal text-center">
+          <button [routerLink]="['/ProjectsList']" class="btn btn-primary">
+            OK
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-backdrop show" *ngIf="open"></div>

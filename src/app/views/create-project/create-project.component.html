@@ -1,0 +1,247 @@
+<div class="box">
+  <form [formGroup]="newProjectForm" (ngSubmit)="onSubmit()">
+    <div class="sm-form">
+      <div
+        class="form-group"
+        [ngClass]="{
+          'has-error':
+            newProjectForm.controls.projectName.errors && formSubmitted
+        }"
+      >
+        <label for="inputobjectives">Project Name <samp>*</samp></label>
+        <input
+          type="text"
+          formControlName="projectName"
+          class="form-control"
+          placeholder="Project Name"
+        />
+        <div
+          class="invalid-feedback"
+          *ngIf="newProjectForm.controls.projectName.errors && formSubmitted"
+        >
+          Please provide a project name.
+          <span class="material-icons">
+            error_outline
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inputscope">Description</label>
+
+        <textarea
+          formControlName="description"
+          class="form-control"
+          rows="3"
+        ></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="PO Number">PO Number</label>
+        <input
+          type="text"
+          formControlName="poNumber"
+          class="form-control tags"
+          placeholder="PO Number"
+        />
+      </div>
+
+      <div
+        class="form-group"
+        [ngClass]="{
+          'has-error':
+            newProjectForm.controls.projectManager.errors && formSubmitted
+        }"
+      >
+        <label for="ProjectManager">Project Manager <samp>*</samp></label>
+        <input
+          type="text"
+          formControlName="projectManager"
+          class="form-control tags"
+          placeholder="Project Manager"
+        />
+        <div
+          class="invalid-feedback"
+          *ngIf="newProjectForm.controls.projectManager.errors && formSubmitted"
+        >
+          Please provide a project manager name.
+          <span class="material-icons">
+            error_outline
+          </span>
+        </div>
+      </div>
+
+      <div
+        class="form-group"
+        [ngClass]="{
+          'has-error':
+            newProjectForm.controls.department.errors && formSubmitted
+        }"
+      >
+        <app-form-select
+          [label]="'Select Department'"
+          [optionsList]="sectorList"
+          (selectedValue)="getSelectedValue($event, 'department')"
+          [required]="true"
+          [valid]="newProjectForm.controls.department.errors && formSubmitted"
+        ></app-form-select>
+        <div
+          class="invalid-feedback"
+          *ngIf="newProjectForm.controls.department.errors && formSubmitted"
+        >
+          Please choose a department.
+          <span class="material-icons" style="right: 24px;">
+            error_outline
+          </span>
+        </div>
+      </div>
+
+      <div
+        class="form-group"
+        [ngClass]="{
+          'has-error': newProjectForm.controls.sector.errors && formSubmitted
+        }"
+      >
+        <app-form-select
+          [label]="'Select Sector'"
+          [optionsList]="sectorList"
+          (selectedValue)="getSelectedValue($event, 'sector')"
+          [required]="true"
+          [valid]="newProjectForm.controls.sector.errors && formSubmitted"
+        ></app-form-select>
+        <div
+          class="invalid-feedback"
+          *ngIf="newProjectForm.controls.sector.errors && formSubmitted"
+        >
+          Please choose a department.
+          <span class="material-icons" style="right: 24px;">
+            error_outline
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <app-form-select
+          [label]="'Select Portfolio'"
+          [optionsList]="sectorList"
+          (selectedValue)="getSelectedValue($event, 'portfolio')"
+        ></app-form-select>
+      </div>
+
+      <div class="form-group">
+        <app-form-select
+          [label]="'Select Program'"
+          [optionsList]="sectorList"
+          (selectedValue)="getSelectedValue($event, 'program')"
+        ></app-form-select>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <div
+            class="form-group"
+            [ngClass]="{
+              'has-error': newProjectForm.controls.owner.errors && formSubmitted
+            }"
+          >
+            <label for="Owner">Owner <samp>*</samp></label>
+            <app-auto-complete
+              [dataList]="data"
+              (selectedValue)="getSelectedValue($event, 'owner')"
+              [valid]="newProjectForm.controls.owner.errors && formSubmitted"
+              (inputCleared)="clearData($event, 'owner')"
+            ></app-auto-complete>
+            <div
+              class="invalid-feedback"
+              *ngIf="newProjectForm.controls.owner.errors && formSubmitted"
+            >
+              Please choose an owner.
+              <span class="material-icons" style="top: 28px;">
+                error_outline
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-sm-12">
+          <div
+            class="form-group"
+            [ngClass]="{
+              'has-error':
+                newProjectForm.controls.sponser.errors && formSubmitted
+            }"
+          >
+            <label for="Sponsor">Sponsor <samp>*</samp></label>
+            <app-auto-complete
+              [dataList]="data"
+              (selectedValue)="getSelectedValue($event, 'sponser')"
+              [valid]="newProjectForm.controls.sponser.errors && formSubmitted"
+              (inputCleared)="clearData($event, 'sponser')"
+            ></app-auto-complete>
+            <div
+              class="invalid-feedback"
+              *ngIf="newProjectForm.controls.sponser.errors && formSubmitted"
+            >
+              Please choose a Sponsor.
+              <span class="material-icons" style="top: 28px;">
+                error_outline
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <div
+            class="form-group"
+            [ngClass]="{
+              'has-error':
+                newProjectForm.controls.startDate.errors && formSubmitted
+            }"
+          >
+            <label for="StartDate">Start Date <samp>*</samp></label>
+            <mat-form-field>
+              <input
+                matInput
+                [matDatepicker]="picker"
+                formControlName="startDate"
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <div
+              class="invalid-feedback"
+              *ngIf="newProjectForm.controls.startDate.errors && formSubmitted"
+              style="margin-top: -0.75rem;"
+            >
+              Please select a date.
+              <span class="material-icons" style="right: 28px; top: 27px;">
+                error_outline
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <app-form-select
+              [label]="'Current Stage'"
+              [optionsList]="sectorList"
+              (selectedValue)="getSelectedValue($event, 'currentStage')"
+            ></app-form-select>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">
+          Create
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+<app-modal [open]="openModal"></app-modal>
