@@ -51,7 +51,14 @@ import { ProjectsTableComponent } from "./components/projects-table/projects-tab
 import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { SearchPipe } from "./components/pipes/search-pipe.pipe";
 import { MatDialogModule } from "@angular/material/dialog";
-import { ModalComponent } from './components/modal/modal.component';
+import { ModalComponent } from "./components/modal/modal.component";
+import { ProjectCardsComponent } from "./views/project-cards/project-cards.component";
+import { ProjectDashboardComponent } from "./views/projects360/project-dashboard/project-dashboard.component";
+import { ProjectInitiationComponent } from "./views/projects360/project-initiation/project-initiation.component";
+import { ProjectPlaningComponent } from "./views/projects360/project-planing/project-planing.component";
+import { ProjectExecutionComponent } from "./views/projects360/project-execution/project-execution.component";
+import { ProjectHeaderComponent } from "./views/projects360/project-header/project-header.component";
+import { MatTabsModule } from "@angular/material/tabs";
 @NgModule({
   declarations: [
     AppComponent,
@@ -83,6 +90,12 @@ import { ModalComponent } from './components/modal/modal.component';
     ProjectsTableComponent,
     SearchPipe,
     ModalComponent,
+    ProjectCardsComponent,
+    ProjectDashboardComponent,
+    ProjectInitiationComponent,
+    ProjectPlaningComponent,
+    ProjectExecutionComponent,
+    ProjectHeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -105,6 +118,7 @@ import { ModalComponent } from './components/modal/modal.component';
     MatNativeDateModule,
     MatSnackBarModule,
     MatDialogModule,
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

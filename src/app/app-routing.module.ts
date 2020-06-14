@@ -14,6 +14,11 @@ import { ProgramComponent } from "./views/programs/program/program.component";
 import { HealthIndexComponent } from "./views/health-index/health-index.component";
 import { CreateProjectComponent } from "./views/create-project/create-project.component";
 import { ProjectListComponent } from "./views/project-list/project-list.component";
+import { ProjectCardsComponent } from "./views/project-cards/project-cards.component";
+import { ProjectDashboardComponent } from "./views/projects360/project-dashboard/project-dashboard.component";
+import { ProjectInitiationComponent } from "./views/projects360/project-initiation/project-initiation.component";
+import { ProjectPlaningComponent } from "./views/projects360/project-planing/project-planing.component";
+import { ProjectExecutionComponent } from "./views/projects360/project-execution/project-execution.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "Home", pathMatch: "full" },
@@ -30,6 +35,20 @@ const routes: Routes = [
   { path: "ProgramDetails/:id", component: ProgramComponent },
   { path: "CreateProject", component: CreateProjectComponent },
   { path: "ProjectsList", component: ProjectListComponent },
+  { path: "ProjectsCards", component: ProjectCardsComponent },
+  {
+    path: "ProjectDetails/dashboard/:id",
+    component: ProjectDashboardComponent,
+  },
+  {
+    path: "ProjectDetails/initiation/:id",
+    component: ProjectInitiationComponent,
+  },
+  { path: "ProjectDetails/planing/:id", component: ProjectPlaningComponent },
+  {
+    path: "ProjectDetails/execution/:id",
+    component: ProjectExecutionComponent,
+  },
 ];
 
 @NgModule({

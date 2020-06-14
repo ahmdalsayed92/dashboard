@@ -35,13 +35,15 @@
       <li
         routerLinkActive="actived"
         class="sidebar-dropdown"
-        [ngClass]="{ active: projectsSubMenuActive }"
+        [ngClass]="{
+          active: projectsSubMenuActive
+        }"
       >
         <a (click)="toggleProjectsSubMenu()">
           <img src="../../../../assets/img/projects.png" alt="" />
           <span>Projects</span>
         </a>
-        <div class="sidebar-submenu">
+        <div class="sidebar-submenu" style="z-index: 10;">
           <ul>
             <li class="menu-title">Projects</li>
 
@@ -51,8 +53,8 @@
                 Creation</a
               >
             </li>
-            <li>
-              <a href="project-dash.html"
+            <li [routerLink]="['/ProjectsCards']" routerLinkActive="actived">
+              <a
                 ><img src="../../../../assets/img/logo2.png" alt="" /> Projects
                 Cards</a
               >
@@ -61,6 +63,56 @@
               <a
                 ><img src="../../../../assets/img/logo2.png" alt="" /> Projects
                 List</a
+              >
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li
+        class="sidebar-dropdown"
+        [ngClass]="{ active: Project360SubMenuActive }"
+      >
+        <div class="sidebar-submenu">
+          <ul>
+            <li class="menu-title">Projects360</li>
+            <li
+              [routerLink]="['/ProjectDetails/dashboard', projectId]"
+              routerLinkActive="actived"
+            >
+              <a
+                ><img src="../../../../assets/img/logo2.png" alt="" />
+                Dashboard</a
+              >
+            </li>
+            <li
+              [routerLink]="['/ProjectDetails/initiation', projectId]"
+              routerLinkActive="actived"
+            >
+              <a
+                ><img src="../../../../assets/img/logo2.png" alt="" />Initiation
+              </a>
+            </li>
+            <li
+              [routerLink]="['/ProjectDetails/planing', projectId]"
+              routerLinkActive="actived"
+            >
+              <a
+                ><img src="../../../../assets/img/logo2.png" alt="" /> Planing
+              </a>
+            </li>
+            <li
+              [routerLink]="['/ProjectDetails/execution', projectId]"
+              routerLinkActive="actived"
+            >
+              <a
+                ><img src="../../../../assets/img/logo2.png" alt="" /> Execution
+                phase</a
+              >
+            </li>
+            <li [routerLink]="['/CreateProject']" routerLinkActive="actived">
+              <a
+                ><img src="../../../../assets/img/logo2.png" alt="" />Create
+                New</a
               >
             </li>
           </ul>

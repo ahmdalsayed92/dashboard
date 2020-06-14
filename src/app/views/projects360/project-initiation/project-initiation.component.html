@@ -1,0 +1,2335 @@
+<app-project-header></app-project-header>
+<div class="stc-tabs">
+  <mat-tab-group>
+    <mat-tab label="Charter">
+      <div class="mt-5">
+        <div class="row">
+          <div
+            class="contant-col"
+            [ngClass]="{
+              'col-md-12': openedForm != 'charter',
+              'col-md-8': openedForm == 'charter'
+            }"
+          >
+            <div class="box new scroll">
+              <div class="box-title filter">
+                <a href="#" class="btn btn-light"
+                  ><i class="fa fa-th-large tcards"></i
+                ></a>
+
+                <button
+                  type="button"
+                  class="btn btn-light filtericon dropdown-toggle"
+                  data-toggle="dropdown"
+                >
+                  <i class="fa fa-filter"></i>
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Best Match</a>
+                  <a class="dropdown-item" href="#">New Adds</a>
+                  <a class="dropdown-item" href="#">Popularity</a>
+                  <a class="dropdown-item" href="#">Top Rated</a>
+                </div>
+
+                <div class="btn-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text btn-sm"
+                        ><i class="fa fa-search"></i
+                      ></span>
+                    </div>
+                    <input
+                      type="text"
+                      class="form-control newinput"
+                      placeholder="search here..."
+                      aria-label="Text input with dropdown button"
+                    />
+                  </div>
+                </div>
+
+                <button
+                  class="btn btn-primary btn_cnew float-right"
+                  (click)="addNew('charter')"
+                  *ngIf="openedForm != 'charter'"
+                >
+                  <i class="fa fa-plus text-white"></i> Add New
+                </button>
+              </div>
+
+              <div class="table-responsive">
+                <table id="" class="table pmd-table table-hover table-striped">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>Objectives</th>
+                      <th>Scope</th>
+                      <th>Out of Scope Items</th>
+                      <th>Assumptions</th>
+                      <th>Current Stage</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of charterList; let i = index">
+                      <td>
+                        <div class="custom-control custom-checkbox">
+                          <input
+                            type="checkbox"
+                            class="custom-control-input"
+                            id="customCheck1{{ i }}"
+                          />
+                          <label
+                            class="custom-control-label"
+                            for="customCheck1{{ i }}"
+                          ></label>
+                        </div>
+                      </td>
+                      <td>{{ item.objectives }}</td>
+                      <td>{{ item.scope }}</td>
+                      <td>{{ item.outOfScope }}</td>
+                      <td>{{ item.assumption }}</td>
+                      <td>{{ item.currentStage }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br />
+                <div class="btn-group">
+                  <a href="#" class="btn btn-red2"
+                    ><i class="fa fa-edit"></i> Edit</a
+                  >
+                </div>
+                <div class="btn-group">
+                  <a
+                    href="#"
+                    class="btn btn-red2"
+                    data-toggle="modal"
+                    data-target="#delete-modal"
+                    ><i class="fa fa-remove"></i> Delete</a
+                  >
+                </div>
+                <br />
+                <br />
+              </div>
+            </div>
+          </div>
+          <form
+            class="form-col col-md-4"
+            *ngIf="openedForm == 'charter'"
+            [formGroup]="charterForm"
+            (ngSubmit)="onSubmit(charterForm, 'charter')"
+          >
+            <div class="box new">
+              <h5 class="box-title overflow-hidden">
+                <img src="../../../../assets/img/icon10.png" alt="" /> New
+                Charter
+                <a
+                  class="btn btn_fclose btn-light float-right"
+                  (click)="closeForm()"
+                  ><i class="fa fa-times"></i
+                ></a>
+              </h5>
+              <div class="sm-form">
+                <div class="form-group">
+                  <label class="control-label">Objectives</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="objectives"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label class="control-label">Scope</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="scope"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label class="control-label">Out of Scope items</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="outOfScope"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label class="control-label">Assumption</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="assumption"
+                  />
+                </div>
+
+                <input
+                  type="submit"
+                  class="btn btn-secondary btn-block"
+                  value="ADD NEW"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Strategic Alignment">
+      <div class="mt-5">
+        <div class="row">
+          <div
+            class="contant-col"
+            [ngClass]="{
+              'col-md-12': openedForm != 'strategicList',
+              'col-md-8': openedForm == 'strategicList'
+            }"
+          >
+            <div class="box new scroll">
+              <div class="box-title filter">
+                <a href="#" class="btn btn-light"
+                  ><i class="fa fa-th-large tcards"></i
+                ></a>
+
+                <button
+                  type="button"
+                  class="btn btn-light filtericon dropdown-toggle"
+                  data-toggle="dropdown"
+                >
+                  <i class="fa fa-filter"></i>
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Best Match</a>
+                  <a class="dropdown-item" href="#">New Adds</a>
+                  <a class="dropdown-item" href="#">Popularity</a>
+                  <a class="dropdown-item" href="#">Top Rated</a>
+                </div>
+
+                <div class="btn-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text btn-sm"
+                        ><i class="fa fa-search"></i
+                      ></span>
+                    </div>
+                    <input
+                      type="text"
+                      class="form-control newinput"
+                      placeholder="search here..."
+                      aria-label="Text input with dropdown button"
+                    />
+                  </div>
+                </div>
+
+                <button
+                  class="btn btn-primary btn_cnew float-right"
+                  (click)="addNew('strategicList')"
+                  *ngIf="openedForm != 'strategicList'"
+                >
+                  <i class="fa fa-plus text-white"></i> Add New
+                </button>
+              </div>
+
+              <div class="table-responsive">
+                <table
+                  id=""
+                  class="table pmd-table table-hover table-striped text-center"
+                >
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>D – Digitize</th>
+                      <th>A – Accelerate</th>
+                      <th>R – Re-Invent</th>
+                      <th>E – Expand</th>
+                      <th>Operational</th>
+                      <th>Others</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of strategicList; let i = index">
+                      <td>
+                        <div class="custom-control custom-checkbox">
+                          <input
+                            type="checkbox"
+                            class="custom-control-input"
+                            id="customCheck1{{ i }}"
+                          />
+                          <label
+                            class="custom-control-label"
+                            for="customCheck1{{ i }}"
+                          ></label>
+                        </div>
+                      </td>
+                      <td>
+                        <i
+                          class="fa fa-2x"
+                          [ngClass]="{
+                            'fa-check-circle text-pink': item.digitize,
+                            'fa-times-circle': !item.digitize
+                          }"
+                        ></i>
+                      </td>
+                      <td>
+                        <i
+                          class="fa fa-2x"
+                          [ngClass]="{
+                            'fa-check-circle text-pink': item.accelerate,
+                            'fa-times-circle': !item.accelerate
+                          }"
+                        ></i>
+                      </td>
+                      <td>
+                        <i
+                          class="fa fa-2x"
+                          [ngClass]="{
+                            'fa-check-circle text-pink': item.reInvent,
+                            'fa-times-circle': !item.reInvent
+                          }"
+                        ></i>
+                      </td>
+                      <td>
+                        <i
+                          class="fa fa-2x"
+                          [ngClass]="{
+                            'fa-check-circle text-pink': item.expand,
+                            'fa-times-circle': !item.expand
+                          }"
+                        ></i>
+                      </td>
+                      <td>
+                        <i
+                          class="fa fa-2x"
+                          [ngClass]="{
+                            'fa-check-circle text-pink': item.operational,
+                            'fa-times-circle': !item.operational
+                          }"
+                        ></i>
+                      </td>
+                      <td>
+                        <i
+                          class="fa fa-2x"
+                          [ngClass]="{
+                            'fa-check-circle text-pink': item.others,
+                            'fa-times-circle': !item.others
+                          }"
+                        ></i>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br />
+                <div class="btn-group">
+                  <a href="#" class="btn btn-red2"
+                    ><i class="fa fa-edit"></i> Edit</a
+                  >
+                </div>
+                <div class="btn-group">
+                  <a
+                    href="#"
+                    class="btn btn-red2"
+                    data-toggle="modal"
+                    data-target="#delete-modal"
+                    ><i class="fa fa-remove"></i> Delete</a
+                  >
+                </div>
+                <br />
+                <br />
+              </div>
+            </div>
+          </div>
+          <form
+            class="form-col col-md-4"
+            *ngIf="openedForm == 'strategicList'"
+            [formGroup]="strategicForm"
+            (ngSubmit)="onSubmit(strategicForm, 'strategic')"
+          >
+            <div class="box new">
+              <h5 class="box-title overflow-hidden">
+                <img src="content/image/icon10.png" alt="" /> New Strategic
+                Alignment
+                <a
+                  class="btn btn_fclose btn-light float-right"
+                  (click)="closeForm()"
+                  ><i class="fa fa-times"></i
+                ></a>
+              </h5>
+              <div class="sm-form">
+                <div class="form-group">
+                  <div class="custom-control custom-checkbox">
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="customCheck2"
+                      required=""
+                      formControlName="digitize"
+                    />
+                    <label class="custom-control-label" for="customCheck2"
+                      >D – Digitize</label
+                    >
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="custom-control custom-checkbox">
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="customCheck3"
+                      required=""
+                      formControlName="accelerate"
+                    />
+                    <label class="custom-control-label" for="customCheck3"
+                      >A – Accelerate</label
+                    >
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="custom-control custom-checkbox">
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="customCheck4"
+                      required=""
+                      formControlName="reInvent"
+                    />
+                    <label class="custom-control-label" for="customCheck4"
+                      >R – Re-Invent</label
+                    >
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="custom-control custom-checkbox">
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="customCheck5"
+                      required=""
+                      formControlName="expand"
+                    />
+                    <label class="custom-control-label" for="customCheck5"
+                      >E – Expand</label
+                    >
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="custom-control custom-checkbox">
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="customCheck6"
+                      required=""
+                      formControlName="operational"
+                    />
+                    <label class="custom-control-label" for="customCheck6"
+                      >Operational</label
+                    >
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="custom-control custom-checkbox">
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="customCheck7"
+                      required=""
+                      formControlName="others"
+                    />
+                    <label class="custom-control-label" for="customCheck7"
+                      >Others</label
+                    >
+                  </div>
+                </div>
+
+                <input
+                  type="submit"
+                  class="btn btn-secondary btn-block"
+                  value="ADD NEW"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Stakeholders">
+      <div class="row">
+        <div
+          class="contant-col"
+          [ngClass]="{
+            'col-md-12': openedForm != 'stakeholders',
+            'col-md-8': openedForm == 'stakeholders'
+          }"
+        >
+          <div class="box new scroll">
+            <div class="box-title filter">
+              <a href="#" class="btn btn-light"
+                ><i class="fa fa-th-large tcards"></i
+              ></a>
+
+              <button
+                type="button"
+                class="btn btn-light filtericon dropdown-toggle"
+                data-toggle="dropdown"
+              >
+                <i class="fa fa-filter"></i>
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Best Match</a>
+                <a class="dropdown-item" href="#">New Adds</a>
+                <a class="dropdown-item" href="#">Popularity</a>
+                <a class="dropdown-item" href="#">Top Rated</a>
+              </div>
+
+              <div class="btn-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text btn-sm"
+                      ><i class="fa fa-search"></i
+                    ></span>
+                  </div>
+                  <input
+                    type="text"
+                    class="form-control newinput"
+                    placeholder="search here..."
+                    aria-label="Text input with dropdown button"
+                  />
+                </div>
+              </div>
+
+              <button
+                class="btn btn-primary btn_cnew float-right"
+                (click)="addNew('stakeholders')"
+                *ngIf="openedForm != 'stakeholders'"
+              >
+                <i class="fa fa-plus text-white"></i> Add New
+              </button>
+            </div>
+
+            <div class="table-responsive">
+              <table id="" class="table pmd-table table-hover table-striped">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Full Name</th>
+                    <th>Email Address</th>
+                    <th>Business Phone</th>
+                    <th>Mobile Number</th>
+                    <th>Job Title</th>
+                    <th>Role</th>
+                    <th>Expectation</th>
+                    <th>Communication</th>
+                    <th>Power</th>
+                    <th>Interest</th>
+                    <th>Action needed</th>
+                    <th>Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of stakeholdersList; let i = index">
+                    <td>
+                      <label class="custom-checkbox"
+                        ><input type="checkbox" /><i></i
+                      ></label>
+                    </td>
+                    <td>{{ item.fullName }}</td>
+                    <td>{{ item.email }}</td>
+                    <td>{{ item.busPhone }}</td>
+                    <td>{{ item.mobNumber }}</td>
+                    <td>{{ item.jobTitle }}</td>
+                    <td>{{ item.role }}</td>
+                    <td>{{ item.expectation }}</td>
+                    <td>{{ item.communication }}</td>
+                    <td>{{ item.power }}</td>
+                    <td>{{ item.interest }}</td>
+                    <td>{{ item.action }}</td>
+                    <td>{{ item.notes }}</td>
+                  </tr>
+                </tbody>
+              </table>
+              <br />
+              <div class="btn-group">
+                <a href="#" class="btn btn-red2"
+                  ><i class="fa fa-edit"></i> Edit</a
+                >
+              </div>
+              <div class="btn-group">
+                <a
+                  href="#"
+                  class="btn btn-red2"
+                  data-toggle="modal"
+                  data-target="#delete-modal"
+                  ><i class="fa fa-remove"></i> Delete</a
+                >
+              </div>
+              <br />
+              <br />
+            </div>
+          </div>
+        </div>
+        <form
+          class="form-col col-md-4"
+          *ngIf="openedForm == 'stakeholders'"
+          [formGroup]="stakeholdersForm"
+          (ngSubmit)="onSubmit(stakeholdersForm, 'stakeholders')"
+        >
+          <div class="box new">
+            <h5 class="box-title overflow-hidden">
+              <img src="content/image/icon10.png" alt="" /> New Stakeholders
+              <a
+                class="btn btn_fclose btn-light float-right"
+                (click)="closeForm()"
+                ><i class="fa fa-times"></i
+              ></a>
+            </h5>
+            <div class="sm-form">
+              <div class="form-group">
+                <label class="control-label"
+                  >Full Name <i class="mandatory">*</i></label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="fullName"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="control-label"
+                  >Email Address <i class="mandatory">*</i></label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="email"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Business Phone</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="busPhone"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Mobile Number</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="mobNumber"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="control-label"
+                  >Job Title <i class="mandatory">*</i></label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="jobTitle"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="control-label"
+                  >Role <i class="mandatory">*</i></label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="role"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Expectation</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="expectation"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Communication</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="communication"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="control-label"
+                  >Power <i class="mandatory">*</i></label
+                >
+                <select class="form-control" formControlName="power">
+                  <option></option>
+                  <option>Power 1</option>
+                  <option>Power 2</option>
+                  <option>Power 3</option>
+                  <option>Power 4</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label"
+                  >Interest <i class="mandatory">*</i></label
+                >
+                <select class="form-control" formControlName="interest">
+                  <option></option>
+                  <option>Interest 1</option>
+                  <option>Interest 2</option>
+                  <option>Interest 3</option>
+                  <option>Interest 4</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Action needed</label>
+                <select class="form-control" formControlName="action">
+                  <option></option>
+                  <option>Action 1</option>
+                  <option>Action 2</option>
+                  <option>Action 3</option>
+                  <option>Action 4</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Notes</label>
+                <textarea
+                  class="form-control"
+                  formControlName="notes"
+                ></textarea>
+              </div>
+              <input
+                type="submit"
+                class="btn btn-secondary btn-block"
+                value="ADD NEW"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+    </mat-tab>
+    <mat-tab label="DICE">
+      <div class="row">
+        <div
+          class="contant-col"
+          [ngClass]="{
+            'col-md-12': openedForm != 'dice',
+            'col-md-8': openedForm == 'dice'
+          }"
+        >
+          <div class="box new scroll">
+            <div class="box-title filter">
+              <a href="#" class="btn btn-light"
+                ><i class="fa fa-th-large tcards"></i
+              ></a>
+
+              <button
+                type="button"
+                class="btn btn-light filtericon dropdown-toggle"
+                data-toggle="dropdown"
+              >
+                <i class="fa fa-filter"></i>
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Best Match</a>
+                <a class="dropdown-item" href="#">New Adds</a>
+                <a class="dropdown-item" href="#">Popularity</a>
+                <a class="dropdown-item" href="#">Top Rated</a>
+              </div>
+
+              <div class="btn-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text btn-sm"
+                      ><i class="fa fa-search"></i
+                    ></span>
+                  </div>
+                  <input
+                    type="text"
+                    class="form-control newinput"
+                    placeholder="search here..."
+                    aria-label="Text input with dropdown button"
+                  />
+                </div>
+              </div>
+
+              <button
+                class="btn btn-primary btn_cnew float-right"
+                (click)="addNew('dice')"
+                *ngIf="openedForm != 'dice'"
+              >
+                <i class="fa fa-plus text-white"></i> Add New
+              </button>
+            </div>
+
+            <div class="table-responsive">
+              <table
+                id=""
+                class="table pmd-table table-hover table-striped text-center"
+              >
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Start Date</th>
+                    <th>SPOC</th>
+                    <th>Weight</th>
+                    <th>Type</th>
+                    <th>Baseline Year</th>
+                    <th>KPI Status</th>
+                    <th>Baseline Value</th>
+                    <th>Unit of Measure</th>
+                    <th>Target Type</th>
+                    <th>Aim to be</th>
+                    <th>Reporting Cycle</th>
+                    <th>Target 2018</th>
+                    <th>Target 2019</th>
+                    <th>Target 2020</th>
+                    <th>Related Milestone</th>
+                    <th>KPI Number</th>
+                    <th>Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <label class="my-checkbox"
+                        ><input type="checkbox" /><i></i
+                      ></label>
+                    </td>
+                    <td>R022</td>
+                    <td>2/13/2020</td>
+                    <td>SPOC</td>
+                    <td>Weight</td>
+                    <td>Type</td>
+                    <td>Year</td>
+                    <td>Status</td>
+                    <td>Value</td>
+                    <td>Unit</td>
+                    <td>Target</td>
+                    <td>Aim to be</td>
+                    <td>Cycle</td>
+                    <td>Target 2018</td>
+                    <td>Target 2019</td>
+                    <td>Target 2020</td>
+                    <td>Related Milestone</td>
+                    <td>0220</td>
+                    <td>Notes</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="my-checkbox"
+                        ><input type="checkbox" /><i></i
+                      ></label>
+                    </td>
+                    <td>R022</td>
+                    <td>2/13/2020</td>
+                    <td>SPOC</td>
+                    <td>Weight</td>
+                    <td>Type</td>
+                    <td>Year</td>
+                    <td>Status</td>
+                    <td>Value</td>
+                    <td>Unit</td>
+                    <td>Target</td>
+                    <td>Aim to be</td>
+                    <td>Cycle</td>
+                    <td>Target 2018</td>
+                    <td>Target 2019</td>
+                    <td>Target 2020</td>
+                    <td>Related Milestone</td>
+                    <td>0220</td>
+                    <td>Notes</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="my-checkbox"
+                        ><input type="checkbox" /><i></i
+                      ></label>
+                    </td>
+                    <td>R022</td>
+                    <td>2/13/2020</td>
+                    <td>SPOC</td>
+                    <td>Weight</td>
+                    <td>Type</td>
+                    <td>Year</td>
+                    <td>Status</td>
+                    <td>Value</td>
+                    <td>Unit</td>
+                    <td>Target</td>
+                    <td>Aim to be</td>
+                    <td>Cycle</td>
+                    <td>Target 2018</td>
+                    <td>Target 2019</td>
+                    <td>Target 2020</td>
+                    <td>Related Milestone</td>
+                    <td>0220</td>
+                    <td>Notes</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="my-checkbox"
+                        ><input type="checkbox" /><i></i
+                      ></label>
+                    </td>
+                    <td>R022</td>
+                    <td>2/13/2020</td>
+                    <td>SPOC</td>
+                    <td>Weight</td>
+                    <td>Type</td>
+                    <td>Year</td>
+                    <td>Status</td>
+                    <td>Value</td>
+                    <td>Unit</td>
+                    <td>Target</td>
+                    <td>Aim to be</td>
+                    <td>Cycle</td>
+                    <td>Target 2018</td>
+                    <td>Target 2019</td>
+                    <td>Target 2020</td>
+                    <td>Related Milestone</td>
+                    <td>0220</td>
+                    <td>Notes</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="my-checkbox"
+                        ><input type="checkbox" /><i></i
+                      ></label>
+                    </td>
+                    <td>R022</td>
+                    <td>2/13/2020</td>
+                    <td>SPOC</td>
+                    <td>Weight</td>
+                    <td>Type</td>
+                    <td>Year</td>
+                    <td>Status</td>
+                    <td>Value</td>
+                    <td>Unit</td>
+                    <td>Target</td>
+                    <td>Aim to be</td>
+                    <td>Cycle</td>
+                    <td>Target 2018</td>
+                    <td>Target 2019</td>
+                    <td>Target 2020</td>
+                    <td>Related Milestone</td>
+                    <td>0220</td>
+                    <td>Notes</td>
+                  </tr>
+                </tbody>
+              </table>
+              <br />
+              <div class="btn-group">
+                <a href="#" class="btn btn-red2"
+                  ><i class="fa fa-edit"></i> Edit</a
+                >
+              </div>
+              <div class="btn-group">
+                <a
+                  href="#"
+                  class="btn btn-red2"
+                  data-toggle="modal"
+                  data-target="#delete-modal"
+                  ><i class="fa fa-remove"></i> Delete</a
+                >
+              </div>
+              <br />
+              <br />
+            </div>
+          </div>
+        </div>
+
+        <form
+          class="form-col col-md-4"
+          *ngIf="openedForm == 'dice'"
+          [formGroup]="diceForm"
+          (ngSubmit)="onSubmit(diceForm, 'dice')"
+        >
+          <div class="box new">
+            <h5 class="box-title overflow-hidden">
+              <img src="content/image/icon10.png" alt="" /> New DICE
+              <a
+                class="btn btn_fclose btn-light float-right"
+                (click)="closeForm()"
+                ><i class="fa fa-times"></i
+              ></a>
+            </h5>
+            <div class="sm-form">
+              <div class="form-group">
+                <label class="control-label">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="name"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Start Date</label>
+                <input
+                  type="text"
+                  class="form-control datepicker"
+                  formControlName="startDate"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">SPOC</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="spoc"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Weight</label>
+                <input type="text" class="form-control" formaction="weight" />
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Type</label>
+                <select class="form-control" formControlName="type">
+                  <option></option>
+                  <option>Type 1</option>
+                  <option>Type 2</option>
+                  <option>Type 3</option>
+                  <option>Type 4</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Baseline Year</label>
+                <select class="form-control" formControlName="baselineYear">
+                  <option></option>
+                  <option>Baseline Year 1</option>
+                  <option>Baseline Year 2</option>
+                  <option>Baseline Year 3</option>
+                  <option>Baseline Year 4</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">KPI Status</label>
+                <select class="form-control" formControlName="kpiStatus">
+                  <option></option>
+                  <option>KPI Status 1</option>
+                  <option>KPI Status 2</option>
+                  <option>KPI Status 3</option>
+                  <option>KPI Status 4</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Baseline Value</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="baselineValue"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Unit of Measure</label>
+                <select class="form-control" formControlName="unitOfMeasure">
+                  <option></option>
+                  <option>Unit of Measure 1</option>
+                  <option>Unit of Measure 2</option>
+                  <option>Unit of Measure 3</option>
+                  <option>Unit of Measure 4</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Target Type</label>
+                <select class="form-control" formControlName="targetType">
+                  <option></option>
+                  <option>Target Type 1</option>
+                  <option>Target Type 2</option>
+                  <option>Target Type 3</option>
+                  <option>Target Type 4</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Aim to be</label>
+                <select class="form-control" formControlName="aimToBe">
+                  <option></option>
+                  <option>Aim to be 1</option>
+                  <option>Aim to be 2</option>
+                  <option>Aim to be 3</option>
+                  <option>Aim to be 4</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Reporting Cycle</label>
+                <select class="form-control" formControlName="reportingCycle">
+                  <option></option>
+                  <option>Reporting Cycle 1</option>
+                  <option>Reporting Cycle 2</option>
+                  <option>Reporting Cycle 3</option>
+                  <option>Reporting Cycle 4</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Target 2018</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="target2018"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Target 2019</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="target2019"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Target 2020</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="target2020"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Related Milestone</label>
+                <select class="form-control" formControlName="relatedMilestone">
+                  <option></option>
+                  <option>Related Milestone 1</option>
+                  <option>Related Milestone 2</option>
+                  <option>Related Milestone 3</option>
+                  <option>Related Milestone 4</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">KPI Number</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="kpiNumber"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Notes</label>
+                <textarea
+                  class="form-control"
+                  formControlName="notes"
+                ></textarea>
+              </div>
+
+              <input
+                type="submit"
+                class="btn btn-secondary btn-block"
+                value="ADD NEW"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+    </mat-tab>
+    <mat-tab label="Key Milestones">
+      <div class="row">
+        <div
+          class="contant-col"
+          [ngClass]="{
+            'col-md-12': openedForm != 'milestones',
+            'col-md-8': openedForm == 'milestones'
+          }"
+        >
+          <div class="box new scroll">
+            <div class="box-title filter">
+              <a href="#" class="btn btn-light"
+                ><i class="fa fa-th-large tcards"></i
+              ></a>
+
+              <button
+                type="button"
+                class="btn btn-light filtericon dropdown-toggle"
+                data-toggle="dropdown"
+              >
+                <i class="fa fa-filter"></i>
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Best Match</a>
+                <a class="dropdown-item" href="#">New Adds</a>
+                <a class="dropdown-item" href="#">Popularity</a>
+                <a class="dropdown-item" href="#">Top Rated</a>
+              </div>
+
+              <div class="btn-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text btn-sm"
+                      ><i class="fa fa-search"></i
+                    ></span>
+                  </div>
+                  <input
+                    type="text"
+                    class="form-control newinput"
+                    placeholder="search here..."
+                    aria-label="Text input with dropdown button"
+                  />
+                </div>
+              </div>
+
+              <button
+                class="btn btn-primary btn_cnew float-right"
+                (click)="addNew('milestones')"
+                *ngIf="openedForm != 'milestones'"
+              >
+                <i class="fa fa-plus text-white"></i> Add New
+              </button>
+            </div>
+            <div class="table-responsive">
+              <table
+                id=""
+                class="table pmd-table table-hover table-striped text-center"
+              >
+                <thead>
+                  <tr>
+                    <th>Title</th>
+                    <th>Start Date</th>
+                    <th>Due Date</th>
+                    <th>Owner</th>
+                    <th>Weight</th>
+                    <th>Deliverables</th>
+                    <th>Dependencies</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <label class="my-checkbox"
+                        ><input type="checkbox" /><i></i
+                      ></label>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <br />
+              <div class="btn-group">
+                <a href="#" class="btn btn-red2"
+                  ><i class="fa fa-edit"></i> Edit</a
+                >
+              </div>
+              <div class="btn-group">
+                <a
+                  href="#"
+                  class="btn btn-red2"
+                  data-toggle="modal"
+                  data-target="#delete-modal"
+                  ><i class="fa fa-remove"></i> Delete</a
+                >
+              </div>
+              <br />
+              <br />
+            </div>
+          </div>
+        </div>
+
+        <form
+          class="form-col col-md-4"
+          *ngIf="openedForm == 'milestones'"
+          [formGroup]="milestonesForm"
+          (ngSubmit)="onSubmit(milestonesForm, 'milestones')"
+        >
+          <div class="box new">
+            <h5 class="box-title overflow-hidden">
+              <img src="content/image/icon10.png" alt="" /> New Key Milestones
+              <a
+                class="btn btn_fclose btn-light float-right"
+                (click)="closeForm()"
+                ><i class="fa fa-times"></i
+              ></a>
+            </h5>
+            <div class="sm-form">
+              <div class="form-group">
+                <label class="control-label">Title</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="title"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Start Date</label>
+                <input
+                  type="text"
+                  class="form-control datepicker"
+                  formControlName="startDate"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Due Date</label>
+                <input
+                  type="text"
+                  class="form-control datepicker"
+                  formControlName="dueDate"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Owner</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="owner"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Weight</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="weight"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Deliverables</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="deliverables"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Dependencies</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="dependencies"
+                />
+              </div>
+
+              <input
+                type="submit"
+                class="btn btn-secondary btn-block"
+                value="ADD NEW"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+    </mat-tab>
+    <mat-tab label="Risk List">
+      <div class="row">
+        <div
+          class="contant-col"
+          [ngClass]="{
+            'col-md-12': openedForm != 'riskList',
+            'col-md-8': openedForm == 'riskList'
+          }"
+        >
+          <div class="box new scroll">
+            <div class="box-title filter">
+              <a href="#" class="btn btn-light"
+                ><i class="fa fa-th-large tcards"></i
+              ></a>
+
+              <button
+                type="button"
+                class="btn btn-light filtericon dropdown-toggle"
+                data-toggle="dropdown"
+              >
+                <i class="fa fa-filter"></i>
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Best Match</a>
+                <a class="dropdown-item" href="#">New Adds</a>
+                <a class="dropdown-item" href="#">Popularity</a>
+                <a class="dropdown-item" href="#">Top Rated</a>
+              </div>
+
+              <div class="btn-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text btn-sm"
+                      ><i class="fa fa-search"></i
+                    ></span>
+                  </div>
+                  <input
+                    type="text"
+                    class="form-control newinput"
+                    placeholder="search here..."
+                    aria-label="Text input with dropdown button"
+                  />
+                </div>
+              </div>
+
+              <button
+                class="btn btn-primary btn_cnew float-right"
+                (click)="addNew('riskList')"
+                *ngIf="openedForm != 'riskList'"
+              >
+                <i class="fa fa-plus text-white"></i> Add New
+              </button>
+            </div>
+            <div class="table-responsive">
+              <table
+                id=""
+                class="table pmd-table table-hover table-striped text-center"
+              >
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Description</th>
+                    <th>Probability</th>
+                    <th>Impact</th>
+                    <th>Date</th>
+                    <th>Owner</th>
+                    <th>Status</th>
+                    <th>Resolution Date</th>
+                    <th>Mitigation Action</th>
+                    <th>Milestone related</th>
+                    <th>Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <label class="my-checkbox"
+                        ><input type="checkbox" /><i></i
+                      ></label>
+                    </td>
+                    <td>Risk 1</td>
+                    <td>Medium</td>
+                    <td>High</td>
+                    <td>2/16/2020</td>
+                    <td>Venu Gopal</td>
+                    <td>Open</td>
+                    <td>2/18/2020</td>
+                    <td>Risk is big</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="my-checkbox"
+                        ><input type="checkbox" /><i></i
+                      ></label>
+                    </td>
+                    <td>Risk 2</td>
+                    <td>High</td>
+                    <td>High</td>
+                    <td>2/19/2020</td>
+                    <td>Venu Gopal</td>
+                    <td>Open</td>
+                    <td>2/21/2020</td>
+                    <td>Risk Mitigation</td>
+                    <td>KM2</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="my-checkbox"
+                        ><input type="checkbox" /><i></i
+                      ></label>
+                    </td>
+                    <td>Risk 3</td>
+                    <td>Medium</td>
+                    <td>High</td>
+                    <td>2/5/2020</td>
+                    <td>Yousef Sami Abdeen</td>
+                    <td>Open</td>
+                    <td>2/7/2020</td>
+                    <td>sss</td>
+                    <td>KM2</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <br />
+              <div class="btn-group">
+                <a href="#" class="btn btn-red2"
+                  ><i class="fa fa-edit"></i> Edit</a
+                >
+              </div>
+              <div class="btn-group">
+                <a
+                  href="#"
+                  class="btn btn-red2"
+                  data-toggle="modal"
+                  data-target="#delete-modal"
+                  ><i class="fa fa-remove"></i> Delete</a
+                >
+              </div>
+              <br />
+              <br />
+            </div>
+          </div>
+        </div>
+
+        <form
+          class="form-col col-md-4"
+          *ngIf="openedForm == 'riskList'"
+          [formGroup]="riskListForm"
+          (ngSubmit)="onSubmit(riskListForm, 'riskList')"
+        >
+          <div class="box new">
+            <h5 class="box-title overflow-hidden">
+              <img src="content/image/icon10.png" alt="" /> New Risk List
+              <a
+                class="btn btn_fclose btn-light float-right"
+                (click)="closeForm()"
+                ><i class="fa fa-times"></i
+              ></a>
+            </h5>
+            <div class="sm-form">
+              <div class="form-group">
+                <label class="control-label">Description</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="description"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Probability</label>
+                <select class="form-control" formControlName="probability">
+                  <option></option>
+                  <option>Probability 1</option>
+                  <option>Probability 2</option>
+                  <option>Probability 3</option>
+                  <option>Probability 4</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Impact</label>
+                <select class="form-control" formControlName="impact">
+                  <option></option>
+                  <option>Impact 1</option>
+                  <option>Impact 2</option>
+                  <option>Impact 3</option>
+                  <option>Impact 4</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Date</label>
+                <input
+                  type="text"
+                  class="form-control datepicker"
+                  formControlName="date"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Owner</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="owner"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Status</label>
+                <select class="form-control" formControlName="status">
+                  <option></option>
+                  <option>Status 1</option>
+                  <option>Status 2</option>
+                  <option>Status 3</option>
+                  <option>Status 4</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Resolution Date</label>
+                <input
+                  type="text"
+                  class="form-control datepicker"
+                  formControlName="resolutionDate"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Mitigation Action</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="mitigationAction"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Milestone related</label>
+                <select class="form-control" formControlName="milestoneRelated">
+                  <option></option>
+                  <option>Milestone related 1</option>
+                  <option>Milestone related 2</option>
+                  <option>Milestone related 3</option>
+                  <option>Milestone related 4</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Notes</label>
+                <textarea
+                  class="form-control"
+                  formControlName="notes"
+                ></textarea>
+              </div>
+
+              <input
+                type="submit"
+                class="btn btn-secondary btn-block"
+                value="ADD NEW"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+    </mat-tab>
+    <mat-tab label="Dependencies">
+      <div class="row">
+        <div
+          class="contant-col"
+          [ngClass]="{
+            'col-md-12': openedForm != 'dependencies',
+            'col-md-8': openedForm == 'dependencies'
+          }"
+        >
+          <div class="box new scroll">
+            <div class="box-title filter">
+              <a href="#" class="btn btn-light"
+                ><i class="fa fa-th-large tcards"></i
+              ></a>
+
+              <button
+                type="button"
+                class="btn btn-light filtericon dropdown-toggle"
+                data-toggle="dropdown"
+              >
+                <i class="fa fa-filter"></i>
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Best Match</a>
+                <a class="dropdown-item" href="#">New Adds</a>
+                <a class="dropdown-item" href="#">Popularity</a>
+                <a class="dropdown-item" href="#">Top Rated</a>
+              </div>
+
+              <div class="btn-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text btn-sm"
+                      ><i class="fa fa-search"></i
+                    ></span>
+                  </div>
+                  <input
+                    type="text"
+                    class="form-control newinput"
+                    placeholder="search here..."
+                    aria-label="Text input with dropdown button"
+                  />
+                </div>
+              </div>
+
+              <button
+                class="btn btn-primary btn_cnew float-right"
+                (click)="addNew('dependencies')"
+                *ngIf="openedForm != 'dependencies'"
+              >
+                <i class="fa fa-plus text-white"></i> Add New
+              </button>
+            </div>
+            <div class="table-responsive">
+              <table
+                id=""
+                class="table pmd-table table-hover table-striped text-center"
+              >
+                <p class="text-muted text-center">
+                  There are no data available
+                </p>
+              </table>
+              <br />
+              <div class="btn-group">
+                <a href="#" class="btn btn-red2"
+                  ><i class="fa fa-edit"></i> Edit</a
+                >
+              </div>
+              <div class="btn-group">
+                <a
+                  href="#"
+                  class="btn btn-red2"
+                  data-toggle="modal"
+                  data-target="#delete-modal"
+                  ><i class="fa fa-remove"></i> Delete</a
+                >
+              </div>
+              <br />
+              <br />
+            </div>
+          </div>
+        </div>
+
+        <form
+          class="form-col col-md-4"
+          *ngIf="openedForm == 'dependencies'"
+          [formGroup]="dependenciesForm"
+          (ngSubmit)="onSubmit(dependenciesForm, 'dependencies')"
+        >
+          <div class="box new">
+            <h5 class="box-title overflow-hidden">
+              <img src="content/image/icon10.png" alt="" /> New Risk List
+              <a
+                class="btn btn_fclose btn-light float-right"
+                (click)="closeForm()"
+                ><i class="fa fa-times"></i
+              ></a>
+            </h5>
+            <div class="sm-form">
+              <input
+                type="submit"
+                class="btn btn-secondary btn-block"
+                value="ADD NEW"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+    </mat-tab>
+    <mat-tab label="RACI">
+      <div class="row">
+        <div
+          class="contant-col"
+          [ngClass]="{
+            'col-md-12': openedForm != 'raci',
+            'col-md-8': openedForm == 'raci'
+          }"
+        >
+          <div class="box new scroll">
+            <div class="box-title filter">
+              <a href="#" class="btn btn-light"
+                ><i class="fa fa-th-large tcards"></i
+              ></a>
+
+              <button
+                type="button"
+                class="btn btn-light filtericon dropdown-toggle"
+                data-toggle="dropdown"
+              >
+                <i class="fa fa-filter"></i>
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Best Match</a>
+                <a class="dropdown-item" href="#">New Adds</a>
+                <a class="dropdown-item" href="#">Popularity</a>
+                <a class="dropdown-item" href="#">Top Rated</a>
+              </div>
+
+              <div class="btn-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text btn-sm"
+                      ><i class="fa fa-search"></i
+                    ></span>
+                  </div>
+                  <input
+                    type="text"
+                    class="form-control newinput"
+                    placeholder="search here..."
+                    aria-label="Text input with dropdown button"
+                  />
+                </div>
+              </div>
+
+              <button
+                class="btn btn-primary btn_cnew float-right"
+                (click)="addNew('raci')"
+                *ngIf="openedForm != 'raci'"
+              >
+                <i class="fa fa-plus text-white"></i> Add New
+              </button>
+            </div>
+            <div class="table-responsive">
+              <table
+                id=""
+                class="table pmd-table table-hover table-striped text-center"
+              >
+                <thead>
+                  <tr>
+                    <th>Activity</th>
+                    <th>Responsible</th>
+                    <th>Accountable</th>
+                    <th>Consulted</th>
+                    <th>Informed</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <br />
+              <div class="btn-group">
+                <a href="#" class="btn btn-red2"
+                  ><i class="fa fa-edit"></i> Edit</a
+                >
+              </div>
+              <div class="btn-group">
+                <a
+                  href="#"
+                  class="btn btn-red2"
+                  data-toggle="modal"
+                  data-target="#delete-modal"
+                  ><i class="fa fa-remove"></i> Delete</a
+                >
+              </div>
+              <br />
+              <br />
+            </div>
+          </div>
+        </div>
+
+        <form
+          class="form-col col-md-4"
+          *ngIf="openedForm == 'raci'"
+          [formGroup]="raciForm"
+          (ngSubmit)="onSubmit(raciForm, 'raci')"
+        >
+          <div class="box new">
+            <h5 class="box-title overflow-hidden">
+              <img src="content/image/icon10.png" alt="" /> New RACI
+              <a
+                class="btn btn_fclose btn-light float-right"
+                (click)="closeForm()"
+                ><i class="fa fa-times"></i
+              ></a>
+            </h5>
+            <div class="sm-form">
+              <div class="form-group">
+                <label class="control-label">Activity</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="activity"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Responsible</label>
+                <select class="form-control" formControlName="responsible">
+                  <option></option>
+                  <option>Responsible 1</option>
+                  <option>Responsible 2</option>
+                  <option>Responsible 3</option>
+                  <option>Responsible 4</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Accountable</label>
+                <select class="form-control" formControlName="accountable">
+                  <option></option>
+                  <option>Accountable 1</option>
+                  <option>Accountable 2</option>
+                  <option>Accountable 3</option>
+                  <option>Accountable 4</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Consulted</label>
+                <select class="form-control" formControlName="consulted">
+                  <option></option>
+                  <option>Consulted 1</option>
+                  <option>Consulted 2</option>
+                  <option>Consulted 3</option>
+                  <option>Consulted 4</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Informed</label>
+                <select class="form-control" formControlName="informed">
+                  <option></option>
+                  <option>Informed 1</option>
+                  <option>Informed 2</option>
+                  <option>Informed 3</option>
+                  <option>Informed 4</option>
+                </select>
+              </div>
+
+              <input
+                type="submit"
+                class="btn btn-secondary btn-block"
+                value="ADD NEW"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+    </mat-tab>
+    <mat-tab label="RIGOR">
+      <div class="row">
+        <div
+          class="contant-col"
+          [ngClass]="{
+            'col-md-12': openedForm != 'rigor',
+            'col-md-8': openedForm == 'rigor'
+          }"
+        >
+          <div class="box new scroll">
+            <div class="box-title filter">
+              <a href="#" class="btn btn-light"
+                ><i class="fa fa-th-large tcards"></i
+              ></a>
+
+              <button
+                type="button"
+                class="btn btn-light filtericon dropdown-toggle"
+                data-toggle="dropdown"
+              >
+                <i class="fa fa-filter"></i>
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Best Match</a>
+                <a class="dropdown-item" href="#">New Adds</a>
+                <a class="dropdown-item" href="#">Popularity</a>
+                <a class="dropdown-item" href="#">Top Rated</a>
+              </div>
+
+              <div class="btn-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text btn-sm"
+                      ><i class="fa fa-search"></i
+                    ></span>
+                  </div>
+                  <input
+                    type="text"
+                    class="form-control newinput"
+                    placeholder="search here..."
+                    aria-label="Text input with dropdown button"
+                  />
+                </div>
+              </div>
+
+              <button
+                class="btn btn-primary btn_cnew float-right"
+                (click)="addNew('rigor')"
+                *ngIf="openedForm != 'rigor'"
+              >
+                <i class="fa fa-plus text-white"></i> Add New
+              </button>
+            </div>
+            <div class="table-responsive">
+              <p class="text-muted text-center">There are no data available</p>
+            </div>
+          </div>
+        </div>
+
+        <form
+          class="form-col col-md-4"
+          *ngIf="openedForm == 'rigor'"
+          [formGroup]="rigorForm"
+          (ngSubmit)="onSubmit(rigorForm, 'rigor')"
+        >
+          <div class="box new">
+            <h5 class="box-title overflow-hidden">
+              <img src="content/image/icon10.png" alt="" /> New rigor
+              <a
+                class="btn btn_fclose btn-light float-right"
+                (click)="closeForm()"
+                ><i class="fa fa-times"></i
+              ></a>
+            </h5>
+            <div class="sm-form">
+              <input
+                type="submit"
+                class="btn btn-secondary btn-block"
+                value="ADD NEW"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+    </mat-tab>
+    <mat-tab label="Escalation">
+      <div class="row">
+        <div
+          class="contant-col"
+          [ngClass]="{
+            'col-md-12': openedForm != 'escalation',
+            'col-md-8': openedForm == 'escalation'
+          }"
+        >
+          <div class="box new scroll">
+            <div class="box-title filter">
+              <a href="#" class="btn btn-light"
+                ><i class="fa fa-th-large tcards"></i
+              ></a>
+
+              <button
+                type="button"
+                class="btn btn-light filtericon dropdown-toggle"
+                data-toggle="dropdown"
+              >
+                <i class="fa fa-filter"></i>
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Best Match</a>
+                <a class="dropdown-item" href="#">New Adds</a>
+                <a class="dropdown-item" href="#">Popularity</a>
+                <a class="dropdown-item" href="#">Top Rated</a>
+              </div>
+
+              <div class="btn-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text btn-sm"
+                      ><i class="fa fa-search"></i
+                    ></span>
+                  </div>
+                  <input
+                    type="text"
+                    class="form-control newinput"
+                    placeholder="search here..."
+                    aria-label="Text input with dropdown button"
+                  />
+                </div>
+              </div>
+
+              <button
+                class="btn btn-primary btn_cnew float-right"
+                (click)="addNew('escalation')"
+                *ngIf="openedForm != 'escalation'"
+              >
+                <i class="fa fa-plus text-white"></i> Add New
+              </button>
+            </div>
+            <div class="table-responsive">
+              <table
+                id=""
+                class="table pmd-table table-hover table-striped text-center"
+              >
+                <thead>
+                  <tr>
+                    <th>Escalation Topic</th>
+                    <th>Level 1</th>
+                    <th>Level 2</th>
+                    <th>Level 3</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <label class="my-checkbox"
+                        ><input type="checkbox" /><i></i
+                      ></label>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <form
+          class="form-col col-md-4"
+          *ngIf="openedForm == 'escalation'"
+          [formGroup]="escalationForm"
+          (ngSubmit)="onSubmit(escalationForm, 'escalation')"
+        >
+          <div class="box new">
+            <h5 class="box-title overflow-hidden">
+              <img src="content/image/icon10.png" alt="" /> New Escalation
+              <a
+                class="btn btn_fclose btn-light float-right"
+                (click)="closeForm()"
+                ><i class="fa fa-times"></i
+              ></a>
+            </h5>
+            <div class="sm-form">
+              <div class="form-group">
+                <label class="control-label">Escalation Topic</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="escalationTopic"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Level 1</label>
+                <select class="form-control" formControlName="level1">
+                  <option></option>
+                  <option>Level 1</option>
+                  <option>Level 2</option>
+                  <option>Level 3</option>
+                  <option>Level 4</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Level 2</label>
+                <select class="form-control" formControlName="level2">
+                  <option></option>
+                  <option>Level 1</option>
+                  <option>Level 2</option>
+                  <option>Level 3</option>
+                  <option>Level 4</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Level 3</label>
+                <select class="form-control" formControlName="level3">
+                  <option></option>
+                  <option>Level 1</option>
+                  <option>Level 2</option>
+                  <option>Level 3</option>
+                  <option>Level 4</option>
+                </select>
+              </div>
+
+              <input
+                type="submit"
+                class="btn btn-secondary btn-block"
+                value="ADD NEW"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+    </mat-tab>
+    <mat-tab label="Benefit realization">
+      <div class="row">
+        <div
+          class="contant-col"
+          [ngClass]="{
+            'col-md-12': openedForm != 'benefitRealization',
+            'col-md-8': openedForm == 'benefitRealization'
+          }"
+        >
+          <div class="box new scroll">
+            <div class="box-title filter">
+              <a href="#" class="btn btn-light"
+                ><i class="fa fa-th-large tcards"></i
+              ></a>
+
+              <button
+                type="button"
+                class="btn btn-light filtericon dropdown-toggle"
+                data-toggle="dropdown"
+              >
+                <i class="fa fa-filter"></i>
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Best Match</a>
+                <a class="dropdown-item" href="#">New Adds</a>
+                <a class="dropdown-item" href="#">Popularity</a>
+                <a class="dropdown-item" href="#">Top Rated</a>
+              </div>
+
+              <div class="btn-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text btn-sm"
+                      ><i class="fa fa-search"></i
+                    ></span>
+                  </div>
+                  <input
+                    type="text"
+                    class="form-control newinput"
+                    placeholder="search here..."
+                    aria-label="Text input with dropdown button"
+                  />
+                </div>
+              </div>
+
+              <button
+                class="btn btn-primary btn_cnew float-right"
+                (click)="addNew('benefitRealization')"
+                *ngIf="openedForm != 'benefitRealization'"
+              >
+                <i class="fa fa-plus text-white"></i> Add New
+              </button>
+            </div>
+            <div class="table-responsive">
+              <table
+                id=""
+                class="table pmd-table table-hover table-striped text-center"
+              >
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Description</th>
+                    <th>Owner</th>
+                    <th>Target Value</th>
+                    <th>Measurement</th>
+                    <th>Related Milestone</th>
+                    <th>Planned Resolution Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <label class="my-checkbox"
+                        ><input type="checkbox" /><i></i
+                      ></label>
+                    </td>
+                    <td>New2</td>
+                    <td>Yousef Sami Abdeen</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="my-checkbox"
+                        ><input type="checkbox" /><i></i
+                      ></label>
+                    </td>
+                    <td>New3</td>
+                    <td>Yousef Sami Abdeen</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="my-checkbox"
+                        ><input type="checkbox" /><i></i
+                      ></label>
+                    </td>
+                    <td>New22</td>
+                    <td>Yousef Sami Abdeen</td>
+                    <td>321</td>
+                    <td>ad</td>
+                    <td>KM2</td>
+                    <td>2/13/2020</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <form
+          class="form-col col-md-4"
+          *ngIf="openedForm == 'benefitRealization'"
+          [formGroup]="benefitRealizationForm"
+          (ngSubmit)="onSubmit(benefitRealizationForm, 'benefitRealization')"
+        >
+          <div class="box new">
+            <h5 class="box-title overflow-hidden">
+              <img src="content/image/icon10.png" alt="" /> New Escalation
+              <a
+                class="btn btn_fclose btn-light float-right"
+                (click)="closeForm()"
+                ><i class="fa fa-times"></i
+              ></a>
+            </h5>
+            <div class="sm-form">
+              <div class="form-group">
+                <label class="control-label">Description</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="description"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Owner</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="owner"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Target Value</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="targetValue"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Measurement</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="measurement"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Related Milestone</label>
+                <select class="form-control" formControlName="relatedMilestone">
+                  <option></option>
+                  <option>Related 1</option>
+                  <option>Related 2</option>
+                  <option>Related 3</option>
+                  <option>Related 4</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Planned Resolution Date</label>
+                <input
+                  type="text"
+                  class="form-control datepicker"
+                  formControlName="plannedResolutionDate"
+                />
+              </div>
+
+              <input
+                type="submit"
+                class="btn btn-secondary btn-block"
+                value="ADD NEW"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

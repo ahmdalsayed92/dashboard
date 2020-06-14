@@ -1,67 +1,5 @@
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
-@import "~@angular/material/theming";
-// Plus imports for other components in your app.
-
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
-@include mat-core();
-
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-$Octopus-EPM-Client-primary: mat-palette($mat-indigo);
-$Octopus-EPM-Client-accent: mat-palette($mat-pink, A200, A100, A400);
-
-// The warn palette is optional (defaults to red).
-$Octopus-EPM-Client-warn: mat-palette($mat-red);
-
-// Create the theme object (a Sass map containing all of the palettes).
-$Octopus-EPM-Client-theme: mat-light-theme(
-  $Octopus-EPM-Client-primary,
-  $Octopus-EPM-Client-accent,
-  $Octopus-EPM-Client-warn
-);
-
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
-@include angular-material-theme($Octopus-EPM-Client-theme);
-
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
-// @import "~@angular/material/theming";
-// Plus imports for other components in your app.
-
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
-// @include mat-core();
-
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-// $Octopus-EPM-Client-primary: mat-palette($mat-indigo);
-// $Octopus-EPM-Client-accent: mat-palette($mat-pink, A200, A100, A400);
-
-// The warn palette is optional (defaults to red).
-// $Octopus-EPM-Client-warn: mat-palette($mat-red);
-
-// Create the theme object (a Sass map containing all of the palettes).
-// $Octopus-EPM-Client-theme: mat-light-theme(
-//   $Octopus-EPM-Client-primary,
-//   $Octopus-EPM-Client-accent,
-//   $Octopus-EPM-Client-warn
-// );
-
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
-// @include angular-material-theme($Octopus-EPM-Client-theme);
-
-/* You can add global styles to this file, and also import other style files */
 @import "./assets/style/font-awesome.min.css";
+@import "../node_modules/c3/c3.css";
 @font-face {
   font-family: "STC-Bold";
   src: url("../src/assets/font/STC-Bold.ttf");
@@ -244,6 +182,8 @@ body {
 }
 .box-title.filter {
   margin-bottom: 20px;
+  border-bottom: 0;
+  padding-bottom: 0;
 }
 .box.new {
   background: #fff;
@@ -263,4 +203,50 @@ body {
   .btn {
     margin-right: 7px;
   }
+}
+.box .box-info {
+  p {
+    color: #555555;
+    font-weight: 400;
+    font-size: 13px;
+  }
+  span {
+    color: #1d252d;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  i {
+    color: #ff214c;
+  }
+}
+mat-tab-body .mat-tab-body-content {
+  height: auto;
+  overflow: visible;
+}
+.btn.btn-red2 {
+  border: 1px solid #f1395b;
+  background: transparent;
+  color: #f1395b;
+  margin-right: 6px;
+  font-size: 13px;
+  font-style: italic;
+  font-weight: 500;
+  i {
+    color: #f1395b;
+  }
+}
+.sm-form label {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+}
+.btn-secondary {
+  color: #fff;
+  background-color: #ff3860;
+  border-color: #ff375e;
+}
+.custom-control-input:checked ~ .custom-control-label::before {
+  color: #fff;
+  border-color: #4f008c;
+  background-color: #4f008c;
 }

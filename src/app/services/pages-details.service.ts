@@ -69,6 +69,13 @@ export class PagesDetailsService {
       type: "projectList",
       path: "/ProjectsList",
     },
+    {
+      id: "",
+      title: "Projects Cards",
+      subTitle: "Programs name",
+      type: "projectCards",
+      path: "/ProjectsCards",
+    },
   ];
 
   getPageDetails(path) {

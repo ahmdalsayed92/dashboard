@@ -7,7 +7,7 @@ export class ProjectsListService {
   constructor() {}
   projects = [
     {
-      id: "",
+      id: "0",
       projectName: "ibm",
       poNumber: "sub title",
       projectManager: "home",
@@ -16,7 +16,7 @@ export class ProjectsListService {
       owner: "ahmed mohamed",
     },
     {
-      id: "",
+      id: "1",
       projectName: "stc",
       poNumber: "sub title",
       projectManager: "home",
@@ -25,7 +25,7 @@ export class ProjectsListService {
       owner: "ahmed mohamed",
     },
     {
-      id: "",
+      id: "2",
       projectName: "google",
       poNumber: "sub title",
       projectManager: "home",
@@ -34,7 +34,7 @@ export class ProjectsListService {
       owner: "eslam mohamed",
     },
     {
-      id: "",
+      id: "3",
       projectName: "home",
       poNumber: "sub title",
       projectManager: "home",
@@ -43,7 +43,7 @@ export class ProjectsListService {
       owner: "mostafa darwesh",
     },
     {
-      id: "",
+      id: "4",
       projectName: "apple",
       poNumber: "sub title",
       projectManager: "salwa khatab",
